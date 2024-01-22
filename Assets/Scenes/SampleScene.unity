@@ -758,7 +758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aRCamera: {fileID: 1654453255}
-  arMeshManager: {fileID: 684000084}
+  arPlaneManager: {fileID: 2009559911}
   scanButton: {fileID: 702824525}
   scanButtonText: {fileID: 1782711087}
   spawnCarButton: {fileID: 544831925}
@@ -789,7 +789,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1177691415743354, guid: 48cb3fb68c91eb94999fd99957eb0cae, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1177691415743354, guid: 48cb3fb68c91eb94999fd99957eb0cae, type: 3}
       propertyPath: _voxelSize
@@ -852,7 +852,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PlanePrefab
       value: 
-      objectReference: {fileID: 1501101156203049797, guid: 2784a389fb70b4c1d9731e40d89267c3,
+      objectReference: {fileID: 1585201990951412, guid: 886609fc1566e4c27b399f1095d6de18,
         type: 3}
     - target: {fileID: 2512387470528047737, guid: 48cb3fb68c91eb94999fd99957eb0cae,
         type: 3}
@@ -922,7 +922,7 @@ PrefabInstance:
     - target: {fileID: 2512387470528047739, guid: 48cb3fb68c91eb94999fd99957eb0cae,
         type: 3}
       propertyPath: m_RequestedTrackingOriginMode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4795478237086065138, guid: 48cb3fb68c91eb94999fd99957eb0cae,
         type: 3}
@@ -960,6 +960,11 @@ PrefabInstance:
       propertyPath: m_ConcurrentQueueSize
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5004497799282344350, guid: 48cb3fb68c91eb94999fd99957eb0cae,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -967,7 +972,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 433999995}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2512387469002778309, guid: 48cb3fb68c91eb94999fd99957eb0cae,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 48cb3fb68c91eb94999fd99957eb0cae, type: 3}
 --- !u!1 &366673219
 GameObject:
@@ -1234,18 +1243,6 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 755954072}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &684000084 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4795478237086065138, guid: 48cb3fb68c91eb94999fd99957eb0cae,
-    type: 3}
-  m_PrefabInstance: {fileID: 331264285}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 968053edfd89749c48f4ea5d444abf64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &702413256
 GameObject:
   m_ObjectHideFlags: 0
@@ -2728,6 +2725,18 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.78431374}
   m_EffectDistance: {x: -2, y: -2}
   m_UseGraphicAlpha: 1
+--- !u!114 &2009559911 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2512387470528047737, guid: 48cb3fb68c91eb94999fd99957eb0cae,
+    type: 3}
+  m_PrefabInstance: {fileID: 331264285}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2077920158
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public Camera aRCamera;
     //[SerializeField] private TextMeshProUGUI scoreText;
-    [SerializeField] private ARMeshManager arMeshManager;
+    //[SerializeField] private ARMeshManager arMeshManager;
+    [SerializeField] private ARPlaneManager arPlaneManager;
     [SerializeField] private GameObject scanButton;
     [SerializeField] private TextMeshProUGUI scanButtonText;
     [SerializeField] private GameObject spawnCarButton;
@@ -35,15 +36,20 @@ public class GameManager : MonoBehaviour
     {
         if (!isScanning)
         {
-            if (!arMeshManager.enabled)
-                arMeshManager.enabled = true;
+            if (!arPlaneManager.enabled)
+            {
+                arPlaneManager.enabled = true;
+
+            }
             scanButtonText.text = "STOP SCAN";
             isScanning = true;
         } 
         else
         {
-            if (arMeshManager.enabled)
-                arMeshManager.enabled = false;
+            if (arPlaneManager.enabled)
+            {
+                arPlaneManager.enabled = false;
+            }
             scanButton.SetActive(false);
             spawnCarButton.SetActive(true);
         }
