@@ -10,10 +10,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public Camera aRCamera;
+    private bool isPlacableCar;
     //[SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private ARMeshManager arMeshManager;
     [SerializeField] private ARPlaneManager arPlaneManager;
     [SerializeField] private GameObject scanButton;
+    [SerializeField] private TextMeshProUGUI textDebug;
     [SerializeField] private TextMeshProUGUI scanButtonText;
     [SerializeField] private GameObject spawnCarButton;
     [SerializeField] private GameObject carHUD;
@@ -23,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        isPlacableCar = false;
         if (Instance != this && Instance != null)
         {
             Destroy(this);
@@ -73,69 +76,52 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.touchCount > 0)
+        if (isPlacableCar)
         {
-            Debug.Log("1");
-            if (Input.GetTouch(0).phase == TouchPhase.Began)
-            {
-                Debug.Log("2");
-
-                // Get the position of the touch
-                Vector2 touchPosition = Input.GetTouch(0).position;
-
-                // Convert the touch position to a ray from the camera
-                Ray ray = Camera.main.ScreenPointToRay(touchPosition);
-
-                // Perform the raycast
-                RaycastHit hit;
-
-                Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red, 1f);
-                if (Physics.Raycast(ray, out hit))
-                {
-                    Debug.Log("A");
-                    car.SetActive(true);
-                    Transform t = hit.collider.gameObject.transform;
-                    t.position = new Vector3(
-                        hit.collider.gameObject.transform.position.x,
-                        hit.collider.gameObject.transform.position.y + 0.5f,
-                        hit.collider.gameObject.transform.position.z
-                    );
-                    car.transform.position = t.position;
-                    ResetCarValues();
-                }
-            }
+            SetCarPosition();
         }
+        
     }
 
     public void SpawnCar()
     {
-        if (!carHUD.activeSelf)
-            carHUD.SetActive(true);
-        //SetCarPosition();
+        isPlacableCar = true;
+        car.SetActive(false);
     }
 
     private void SetCarPosition()
     {
-        car.SetActive(false);
+        
         //if (car != null)
         //     Destroy(car.gameObject);
 
-        Vector3 screenCenter = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
-        Ray ray = Camera.main.ScreenPointToRay(screenCenter);
-
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit))
+        if (Input.touchCount > 0)
         {
-            car.SetActive(true);
-            Transform t = hit.collider.gameObject.transform;
-            t.position = new Vector3(
-                hit.collider.gameObject.transform.position.x,
-                hit.collider.gameObject.transform.position.y + 0.5f,
-                hit.collider.gameObject.transform.position.z
-            );
-            car.transform.position = t.position;
-            ResetCarValues();
+            if (Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                // Get the position of the touch
+                Vector2 touchPosition = Input.GetTouch(0).position;
+
+                // Convert the touch position to a ray from the camera
+                Ray ray = aRCamera.ScreenPointToRay(touchPosition);
+
+                // Perform the raycast
+                RaycastHit hit;
+
+                //Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red, 100f);
+                if (Physics.Raycast(ray, out hit))
+                {
+                    car.SetActive(true);
+                    Vector3 t = hit.point;
+                    t = new Vector3(t.x, t.y+0.5f, t.z);
+                    car.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                    car.transform.position = t;
+                    ResetCarValues();
+                    isPlacableCar = false;
+                    if (!carHUD.activeSelf)
+                        carHUD.SetActive(true);
+                }
+            }
         }
     }
 
