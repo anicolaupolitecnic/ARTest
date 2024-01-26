@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.nianticlabs.lightship": {
-      "version": "file:C:/Users/toni/Downloads/ardk-upm-3.2.0.tgz",
+      "version": "file:C:/Users/anicolau/Downloads/ardk-upm-3.2.0 (1).tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {

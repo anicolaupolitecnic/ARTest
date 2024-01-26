@@ -590,7 +590,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257132459}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
@@ -758,6 +758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aRCamera: {fileID: 1654453255}
+  arMeshManager: {fileID: 560199279}
   arPlaneManager: {fileID: 2009559911}
   scanButton: {fileID: 702824525}
   scanButtonText: {fileID: 1782711087}
@@ -937,7 +938,7 @@ PrefabInstance:
     - target: {fileID: 4795478237086065138, guid: 48cb3fb68c91eb94999fd99957eb0cae,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4795478237086065138, guid: 48cb3fb68c91eb94999fd99957eb0cae,
         type: 3}
@@ -972,11 +973,7 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 433999995}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2512387469002778309, guid: 48cb3fb68c91eb94999fd99957eb0cae,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48cb3fb68c91eb94999fd99957eb0cae, type: 3}
 --- !u!1 &366673219
 GameObject:
@@ -1122,7 +1119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &544831926
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1237,6 +1234,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544831925}
   m_CullTransparentMesh: 1
+--- !u!114 &560199279 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4795478237086065138, guid: 48cb3fb68c91eb94999fd99957eb0cae,
+    type: 3}
+  m_PrefabInstance: {fileID: 331264285}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968053edfd89749c48f4ea5d444abf64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &574580992 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 5368408046811178978, guid: 79d0ca8b77e301442afdb49f102e8aed,
@@ -1321,7 +1330,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &702824526
 RectTransform:
   m_ObjectHideFlags: 0

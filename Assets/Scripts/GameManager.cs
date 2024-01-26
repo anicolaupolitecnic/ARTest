@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 
@@ -10,14 +11,14 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public Camera aRCamera;
     //[SerializeField] private TextMeshProUGUI scoreText;
-    //[SerializeField] private ARMeshManager arMeshManager;
+    [SerializeField] private ARMeshManager arMeshManager;
     [SerializeField] private ARPlaneManager arPlaneManager;
     [SerializeField] private GameObject scanButton;
     [SerializeField] private TextMeshProUGUI scanButtonText;
     [SerializeField] private GameObject spawnCarButton;
     [SerializeField] private GameObject carHUD;
     [SerializeField] private GameObject car;
-    private bool isScanning = false;
+    private bool isScanning = true;
     private float currentScore = 0;
 
     void Awake()
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
 
     public void Scanning()
     {
+        /*
         if (!isScanning)
         {
             if (!arPlaneManager.enabled)
@@ -41,6 +43,13 @@ public class GameManager : MonoBehaviour
                 arPlaneManager.enabled = true;
 
             }
+
+            if (!arMeshManager.enabled)
+            {
+                arMeshManager.enabled = true;
+
+            }
+
             scanButtonText.text = "STOP SCAN";
             isScanning = true;
         } 
@@ -50,17 +59,59 @@ public class GameManager : MonoBehaviour
             {
                 arPlaneManager.enabled = false;
             }
-            scanButton.SetActive(false);
+
+            if (arMeshManager.enabled)
+            {
+                arMeshManager.enabled = false;
+            }
+            
+            //scanButton.SetActive(false);
             spawnCarButton.SetActive(true);
         }
-            
+           */
+    }
+
+    void Update()
+    {
+        if (Input.touchCount > 0)
+        {
+            Debug.Log("1");
+            if (Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                Debug.Log("2");
+
+                // Get the position of the touch
+                Vector2 touchPosition = Input.GetTouch(0).position;
+
+                // Convert the touch position to a ray from the camera
+                Ray ray = Camera.main.ScreenPointToRay(touchPosition);
+
+                // Perform the raycast
+                RaycastHit hit;
+
+                Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red, 1f);
+                if (Physics.Raycast(ray, out hit))
+                {
+                    Debug.Log("A");
+                    car.SetActive(true);
+                    Transform t = hit.collider.gameObject.transform;
+                    t.position = new Vector3(
+                        hit.collider.gameObject.transform.position.x,
+                        hit.collider.gameObject.transform.position.y + 0.5f,
+                        hit.collider.gameObject.transform.position.z
+                    );
+                    car.transform.position = t.position;
+                    ResetCarValues();
+                }
+            }
+        }
     }
 
     public void SpawnCar()
     {
         if (!carHUD.activeSelf)
             carHUD.SetActive(true);
-        SetCarPosition();
+        //SetCarPosition();
     }
 
     private void SetCarPosition()
@@ -80,7 +131,7 @@ public class GameManager : MonoBehaviour
             Transform t = hit.collider.gameObject.transform;
             t.position = new Vector3(
                 hit.collider.gameObject.transform.position.x,
-                hit.collider.gameObject.transform.position.y + 3f,
+                hit.collider.gameObject.transform.position.y + 0.5f,
                 hit.collider.gameObject.transform.position.z
             );
             car.transform.position = t.position;
