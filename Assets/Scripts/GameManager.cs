@@ -10,18 +10,23 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public Camera aRCamera;
+
+    //GENERAL
+    [SerializeField] private GameObject mainMenu;    
+    [SerializeField] private GameObject modeAdventure;
+    [SerializeField] private GameObject modeCircuit;
+
+    //Mode Adventure
     private bool isPlacableCar;
-    //[SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private ARMeshManager arMeshManager;
-    [SerializeField] private ARPlaneManager arPlaneManager;
-    [SerializeField] private GameObject scanButton;
-    [SerializeField] private TextMeshProUGUI textDebug;
+    [SerializeField] private GameObject meshing;
     [SerializeField] private TextMeshProUGUI scanButtonText;
     [SerializeField] private GameObject spawnCarButton;
     [SerializeField] private GameObject carHUD;
     [SerializeField] private GameObject car;
-    private bool isScanning = true;
-    private float currentScore = 0;
+
+    //Mode Circuit
+    [SerializeField] private ARTrackedImageManager tracking;
 
     void Awake()
     {
@@ -34,44 +39,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-    }
-
-    public void Scanning()
-    {
-        /*
-        if (!isScanning)
-        {
-            if (!arPlaneManager.enabled)
-            {
-                arPlaneManager.enabled = true;
-
-            }
-
-            if (!arMeshManager.enabled)
-            {
-                arMeshManager.enabled = true;
-
-            }
-
-            scanButtonText.text = "STOP SCAN";
-            isScanning = true;
-        } 
-        else
-        {
-            if (arPlaneManager.enabled)
-            {
-                arPlaneManager.enabled = false;
-            }
-
-            if (arMeshManager.enabled)
-            {
-                arMeshManager.enabled = false;
-            }
-            
-            //scanButton.SetActive(false);
-            spawnCarButton.SetActive(true);
-        }
-           */
+        EnableModeCircuit();
     }
 
     void Update()
@@ -80,7 +48,31 @@ public class GameManager : MonoBehaviour
         {
             SetCarPosition();
         }
-        
+    }
+
+    public void EnableModeAdventure()
+    {
+        mainMenu.SetActive(false);
+        modeCircuit.SetActive(false);
+        modeAdventure.SetActive(true);
+        meshing.SetActive(true);
+    }
+
+    public void EnableModeCircuit()
+    {
+        mainMenu.SetActive(false);
+        modeAdventure.SetActive(false);
+        modeCircuit.SetActive(true);
+        tracking.enabled = true;
+    }
+
+    public void BackButton()
+    {
+        modeAdventure.SetActive(false);
+        meshing.SetActive(false);
+        modeCircuit.SetActive(false);
+        tracking.enabled = false;
+        mainMenu.SetActive(true);
     }
 
     public void SpawnCar()
@@ -91,10 +83,6 @@ public class GameManager : MonoBehaviour
 
     private void SetCarPosition()
     {
-        
-        //if (car != null)
-        //     Destroy(car.gameObject);
-
         if (Input.touchCount > 0)
         {
             if (Input.GetTouch(0).phase == TouchPhase.Began)
@@ -131,11 +119,5 @@ public class GameManager : MonoBehaviour
         prom.carSpeed = 0f;
         prom.isDrifting = false;
         prom.isTractionLocked = false;
-    }
-
-    public void UpdateScore(float points)
-    {
-        currentScore += points;
-        //scoreText.text = string.Format("Score: {0}", currentScore);
     }
 }
