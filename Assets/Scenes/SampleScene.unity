@@ -274,7 +274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &123461609
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1010,6 +1010,7 @@ MonoBehaviour:
   carHUD: {fileID: 232119411}
   car: {fileID: 1083830522}
   planeManager: {fileID: 2009559915}
+  circuit: {fileID: 6787638231869810122, guid: 405a6859de3dbe547b9a4bb42d8a338f, type: 3}
 --- !u!4 &288986145
 Transform:
   m_ObjectHideFlags: 0
@@ -2799,7 +2800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1470278009
 RectTransform:
   m_ObjectHideFlags: 0

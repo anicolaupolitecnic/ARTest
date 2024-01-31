@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     //Mode Circuit
     private bool isPlacableCircuit = false;
     [SerializeField] private ARPlaneManager planeManager;
+    [SerializeField] private GameObject circuit;
     //[SerializeField] private ARTrackedImageManager tracking;
 
     void Awake()
@@ -92,6 +93,22 @@ public class GameManager : MonoBehaviour
         modeCircuit.SetActive(false);
         planeManager.enabled = false;
         mainMenu.SetActive(true);
+
+        //BOTH
+        GameObject go = GameObject.Find("Trackables");
+        if (go != null)
+        {
+            Destroy(go);
+        }
+        //CIRCUIT
+        go = GameObject.Find("DEMO");
+        if (go != null)
+        {
+            Destroy(go);
+        }
+        //ADVENT
+        carHUD.SetActive(false);
+        car.SetActive(false);
     }
 
     public void SpawnCar()
@@ -150,15 +167,8 @@ public class GameManager : MonoBehaviour
                 //Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red, 100f);
                 if (Physics.Raycast(ray, out hit))
                 {
-
-                    if (hit.collider.gameObject.name == "")
-                    {
-                        //Spawn circuit
-
-                    }
-                    debugText.text = "" + hit.collider.gameObject.name;
-                    isPlacableCircuit = false;
-                    
+                    Instantiate(circuit, hit.collider.gameObject.transform);
+                    planeManager.enabled = isPlacableCircuit = false;
                 }
             }
         }
