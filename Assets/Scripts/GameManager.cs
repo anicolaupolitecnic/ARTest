@@ -47,7 +47,8 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-       // EnableModeCircuit();
+        // EnableModeCircuit();
+        mode = modeMainMenu;
     }
 
     void Update()
@@ -71,6 +72,7 @@ public class GameManager : MonoBehaviour
         modeCircuit.SetActive(false);
         modeAdventure.SetActive(true);
         meshing.SetActive(true);
+        mode = modeAdv;
     }
 
     public void EnableModeCircuit()
@@ -79,6 +81,8 @@ public class GameManager : MonoBehaviour
         modeAdventure.SetActive(false);
         modeCircuit.SetActive(true);
         planeManager.enabled = true;
+        mode = modeCir;
+        isPlacableCircuit = true;
     }
 
     public void BackButton()
