@@ -11,6 +11,7 @@ public class ModeCirManager : MonoBehaviour
     [SerializeField] private GameObject menuModeCircuit;
     [SerializeField] private GameObject carHUD;
     [SerializeField] private GameObject car;
+    [SerializeField] public static List<GameObject> carsList;
     //Mode Circuit
     [SerializeField] private GameObject MenuSelectCar;
     [SerializeField] private GameObject MenuSelectCircuit;
@@ -18,6 +19,7 @@ public class ModeCirManager : MonoBehaviour
     private bool isPlacableCircuit = false;
     [SerializeField] private ARPlaneManager planeManager;
     [SerializeField] private GameObject circuit;
+    public static List<GameObject> circuitsList;
     //[SerializeField] private ARTrackedImageManager tracking;
 
     private void Awake()
