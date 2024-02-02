@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject car;
 
     //Mode Circuit
+    [SerializeField] private GameObject MenuSelectCar;
+    [SerializeField] private GameObject MenuSelectCircuit;
+    [SerializeField] private GameObject MenuGameCircuit;
     private bool isPlacableCircuit = false;
     [SerializeField] private ARPlaneManager planeManager;
     [SerializeField] private GameObject circuit;
@@ -81,6 +84,11 @@ public class GameManager : MonoBehaviour
         mainMenu.SetActive(false);
         modeAdventure.SetActive(false);
         modeCircuit.SetActive(true);
+
+        MenuSelectCar.SetActive(false);
+        MenuSelectCircuit.SetActive(false);
+        MenuGameCircuit.SetActive(true);
+
         planeManager.enabled = true;
         mode = modeCir;
         isPlacableCircuit = true;
@@ -109,6 +117,21 @@ public class GameManager : MonoBehaviour
         //ADVENT
         carHUD.SetActive(false);
         car.SetActive(false);
+    }
+
+    public void GoToCarSelection()
+    {
+        mainMenu.SetActive(false);
+        modeCircuit.SetActive(true);
+        MenuSelectCar.SetActive(true);
+        MenuSelectCircuit.SetActive(false);
+
+    }
+
+    public void GoToCircuitSelection()
+    {
+        MenuSelectCar.SetActive(false);
+        MenuSelectCircuit.SetActive(true);
     }
 
     public void SpawnCar()
