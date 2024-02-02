@@ -35,8 +35,13 @@ public class ModeAdvManager : MonoBehaviour
     {
         if (gameManager.mode == gameManager.MODEADV)
         {
+            Debug.Log("Entra modo adv");
             if (isPlacableCar)
+            {
+                Debug.Log("Entra isPlacable");
                 SetCarPosition();
+            }
+                
         }
     }
 
@@ -58,8 +63,10 @@ public class ModeAdvManager : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
+            Debug.Log("Entra touck 1");
             if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
+                Debug.Log("Entra touck 2");
                 // Get the position of the touch
                 Vector2 touchPosition = Input.GetTouch(0).position;
 
@@ -72,6 +79,7 @@ public class ModeAdvManager : MonoBehaviour
                 //Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red, 100f);
                 if (Physics.Raycast(ray, out hit))
                 {
+                    Debug.Log("Entra touck 3");
                     car.SetActive(true);
                     Vector3 t = hit.point;
                     t = new Vector3(t.x, t.y + 0.5f, t.z);
