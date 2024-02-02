@@ -1607,12 +1607,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968053edfd89749c48f4ea5d444abf64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &574580992 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5368408046811178978, guid: 79d0ca8b77e301442afdb49f102e8aed,
-    type: 3}
-  m_PrefabInstance: {fileID: 755954072}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &620744147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2061,7 +2055,7 @@ PrefabInstance:
     - target: {fileID: 627556911, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
       propertyPath: carEngineSound
       value: 
-      objectReference: {fileID: 574580992}
+      objectReference: {fileID: 0}
     - target: {fileID: 627556911, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
       propertyPath: throttleButton
       value: 
@@ -2081,7 +2075,7 @@ PrefabInstance:
     - target: {fileID: 627556911, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
       propertyPath: tireScreechSound
       value: 
-      objectReference: {fileID: 1490722857}
+      objectReference: {fileID: 0}
     - target: {fileID: 627556911, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
       propertyPath: useTouchControls
       value: 1
@@ -3005,12 +2999,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1470278008}
   m_CullTransparentMesh: 1
---- !u!82 &1490722857 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 3112344877755684047, guid: 79d0ca8b77e301442afdb49f102e8aed,
-    type: 3}
-  m_PrefabInstance: {fileID: 755954072}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1560656498
 GameObject:
   m_ObjectHideFlags: 0
