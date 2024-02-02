@@ -9,6 +9,7 @@ public class GenerateCircuit : MonoBehaviour
     [SerializeField] private GameObject circuit1;
     [SerializeField] private GameObject circuit2;
     [SerializeField] private GameObject circuit3;
+    private GameObject chosenCircuit;
     [SerializeField] private GameObject circuitsPanel;
     // Start is called before the first frame update
     void Start()
@@ -41,8 +42,23 @@ public class GenerateCircuit : MonoBehaviour
         circuitsPanel.SetActive(false);
     }
 
+    private void ChooseCircuit1()
+    {
+        chosenCircuit = circuit1;
+    }
 
-    private void GenerateCircuit(GameObject circuit, Transform location)
+    private void ChooseCircuit2()
+    {
+        chosenCircuit = circuit2;
+    }
+
+    private void ChooseCircuit3()
+    {
+        chosenCircuit = circuit3;
+    }
+
+
+    private void GenerateChosenCircuit(GameObject circuit, Transform location)
     {
         Instantiate(circuit, location);
     }
