@@ -19,7 +19,12 @@ public class GameManager : MonoBehaviour
     public int MODEADV = 1;
     public int MODECIR = 2;
     public int mode = 0;
+    private ModeAdvManager modeAdvManager;
 
+    private void Awake()
+    {
+        modeAdvManager = GetComponent<ModeAdvManager>();
+    }
 
     public void DisableMainMenu()
     {
@@ -33,7 +38,8 @@ public class GameManager : MonoBehaviour
 
     public void SelectModeAdventure()
     {
-        modeAdventureMenu.SetActive(true);
+        //modeAdventureMenu.SetActive(true);
+        modeAdvManager.EnableModeAdventure();
         DisableMainMenu();
     }
 
