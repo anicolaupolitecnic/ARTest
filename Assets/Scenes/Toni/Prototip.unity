@@ -1098,7 +1098,7 @@ MonoBehaviour:
   aRCamera: {fileID: 1654453255}
   menuModeCircuit: {fileID: 1983400553}
   carHUD: {fileID: 1980234688}
-  car: {fileID: 1083830522}
+  car: {fileID: 823019475}
   MenuSelectCar: {fileID: 1715572312}
   MenuSelectCircuit: {fileID: 423768645}
   MenuGameCircuit: {fileID: 1983400553}
@@ -1123,7 +1123,7 @@ MonoBehaviour:
   scanButtonText: {fileID: 1677564850}
   spawnCarButton: {fileID: 544831925}
   carHUD: {fileID: 232119411}
-  car: {fileID: 1083830522}
+  car: {fileID: 823019475}
 --- !u!1 &291846069
 GameObject:
   m_ObjectHideFlags: 0
@@ -1732,6 +1732,54 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &465883035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823019475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fefceefe666bb4682b272ec8c5bdd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 90
+  maxReverseSpeed: 45
+  accelerationMultiplier: 2
+  maxSteeringAngle: 27
+  steeringSpeed: 0.5
+  brakeForce: 350
+  decelerationMultiplier: 2
+  handbrakeDriftMultiplier: 5
+  bodyMassCenter: {x: 0, y: 0, z: 0}
+  frontLeftMesh: {fileID: 823019483}
+  frontLeftCollider: {fileID: 823019482}
+  frontRightMesh: {fileID: 823019481}
+  frontRightCollider: {fileID: 823019480}
+  rearLeftMesh: {fileID: 823019479}
+  rearLeftCollider: {fileID: 823019478}
+  rearRightMesh: {fileID: 823019477}
+  rearRightCollider: {fileID: 823019476}
+  useEffects: 0
+  RLWParticleSystem: {fileID: 0}
+  RRWParticleSystem: {fileID: 0}
+  RLWTireSkid: {fileID: 0}
+  RRWTireSkid: {fileID: 0}
+  useUI: 1
+  carSpeedText: {fileID: 1401137006}
+  useSounds: 0
+  carEngineSound: {fileID: 0}
+  tireScreechSound: {fileID: 0}
+  useTouchControls: 1
+  throttleButton: {fileID: 1956739516}
+  reverseButton: {fileID: 1683981528}
+  turnRightButton: {fileID: 715779622}
+  turnLeftButton: {fileID: 125043983}
+  handbrakeButton: {fileID: 841080458}
+  carSpeed: 0
+  isDrifting: 0
+  isTractionLocked: 0
 --- !u!1 &481178030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1948,8 +1996,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 288986144}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 288986147}
+        m_TargetAssemblyTypeName: ModeAdvManager, Assembly-CSharp
         m_MethodName: SpawnCar
         m_Mode: 1
         m_Arguments:
@@ -2698,7 +2746,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715779622}
   m_CullTransparentMesh: 1
---- !u!1001 &755954072
+--- !u!1001 &823019474
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2706,124 +2754,146 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 627556911, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
-      propertyPath: useUI
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 627556911, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
-      propertyPath: useSounds
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 627556911, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
-      propertyPath: carSpeedText
-      value: 
-      objectReference: {fileID: 1401137006}
-    - target: {fileID: 627556911, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
-      propertyPath: reverseButton
-      value: 
-      objectReference: {fileID: 1683981528}
-    - target: {fileID: 627556911, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
-      propertyPath: carEngineSound
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 627556911, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
-      propertyPath: throttleButton
-      value: 
-      objectReference: {fileID: 1956739516}
-    - target: {fileID: 627556911, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
-      propertyPath: turnLeftButton
-      value: 
-      objectReference: {fileID: 125043983}
-    - target: {fileID: 627556911, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
-      propertyPath: handbrakeButton
-      value: 
-      objectReference: {fileID: 841080458}
-    - target: {fileID: 627556911, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
-      propertyPath: turnRightButton
-      value: 
-      objectReference: {fileID: 715779622}
-    - target: {fileID: 627556911, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
-      propertyPath: tireScreechSound
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 627556911, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
-      propertyPath: useTouchControls
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 627556911, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
-      propertyPath: decelerationMultiplier
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed,
+    - target: {fileID: 564193224984687848, guid: 8e209d81bcad719419520ac111314325,
         type: 3}
-      propertyPath: m_RootOrder
-      value: 0
+      propertyPath: m_LocalScale.x
+      value: 2.5
       objectReference: {fileID: 0}
-    - target: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed,
+    - target: {fileID: 564193224984687848, guid: 8e209d81bcad719419520ac111314325,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 564193224984687848, guid: 8e209d81bcad719419520ac111314325,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 564193224984687848, guid: 8e209d81bcad719419520ac111314325,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed,
+    - target: {fileID: 564193224984687848, guid: 8e209d81bcad719419520ac111314325,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed,
+    - target: {fileID: 564193224984687848, guid: 8e209d81bcad719419520ac111314325,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed,
+    - target: {fileID: 564193224984687848, guid: 8e209d81bcad719419520ac111314325,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed,
+    - target: {fileID: 564193224984687848, guid: 8e209d81bcad719419520ac111314325,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed,
+    - target: {fileID: 564193224984687848, guid: 8e209d81bcad719419520ac111314325,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed,
+    - target: {fileID: 564193224984687848, guid: 8e209d81bcad719419520ac111314325,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed,
+    - target: {fileID: 564193224984687848, guid: 8e209d81bcad719419520ac111314325,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed,
+    - target: {fileID: 564193224984687848, guid: 8e209d81bcad719419520ac111314325,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed,
+    - target: {fileID: 564193224984687848, guid: 8e209d81bcad719419520ac111314325,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 642287924342879162, guid: 79d0ca8b77e301442afdb49f102e8aed,
+    - target: {fileID: 1162156090882619932, guid: 8e209d81bcad719419520ac111314325,
         type: 3}
       propertyPath: m_Name
-      value: Car
+      value: MonsterTruck
       objectReference: {fileID: 0}
-    - target: {fileID: 642287924342879162, guid: 79d0ca8b77e301442afdb49f102e8aed,
+    - target: {fileID: 1162156090882619932, guid: 8e209d81bcad719419520ac111314325,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6054808838767178199, guid: 8e209d81bcad719419520ac111314325, type: 3}
+    - {fileID: 1505191558881343263, guid: 8e209d81bcad719419520ac111314325, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1162156090882619932, guid: 8e209d81bcad719419520ac111314325,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 465883035}
+  m_SourcePrefab: {fileID: 100100000, guid: 8e209d81bcad719419520ac111314325, type: 3}
+--- !u!1 &823019475 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1162156090882619932, guid: 8e209d81bcad719419520ac111314325,
+    type: 3}
+  m_PrefabInstance: {fileID: 823019474}
+  m_PrefabAsset: {fileID: 0}
+--- !u!146 &823019476 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 32722573491233131, guid: 8e209d81bcad719419520ac111314325,
+    type: 3}
+  m_PrefabInstance: {fileID: 823019474}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &823019477 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6927121372875553241, guid: 8e209d81bcad719419520ac111314325,
+    type: 3}
+  m_PrefabInstance: {fileID: 823019474}
+  m_PrefabAsset: {fileID: 0}
+--- !u!146 &823019478 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 3297310374909788515, guid: 8e209d81bcad719419520ac111314325,
+    type: 3}
+  m_PrefabInstance: {fileID: 823019474}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &823019479 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8435549061716891892, guid: 8e209d81bcad719419520ac111314325,
+    type: 3}
+  m_PrefabInstance: {fileID: 823019474}
+  m_PrefabAsset: {fileID: 0}
+--- !u!146 &823019480 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 2874514380316148195, guid: 8e209d81bcad719419520ac111314325,
+    type: 3}
+  m_PrefabInstance: {fileID: 823019474}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &823019481 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2668518468334769635, guid: 8e209d81bcad719419520ac111314325,
+    type: 3}
+  m_PrefabInstance: {fileID: 823019474}
+  m_PrefabAsset: {fileID: 0}
+--- !u!146 &823019482 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 736403081106187498, guid: 8e209d81bcad719419520ac111314325,
+    type: 3}
+  m_PrefabInstance: {fileID: 823019474}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &823019483 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8594530399983947578, guid: 8e209d81bcad719419520ac111314325,
+    type: 3}
+  m_PrefabInstance: {fileID: 823019474}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &839718198
 GameObject:
   m_ObjectHideFlags: 0
@@ -3762,12 +3832,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081346889}
   m_CullTransparentMesh: 1
---- !u!1 &1083830522 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 642287924342879162, guid: 79d0ca8b77e301442afdb49f102e8aed,
-    type: 3}
-  m_PrefabInstance: {fileID: 755954072}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1140357094
 GameObject:
   m_ObjectHideFlags: 0
@@ -7425,4 +7489,4 @@ SceneRoots:
   - {fileID: 331264285}
   - {fileID: 279937959}
   - {fileID: 257132462}
-  - {fileID: 755954072}
+  - {fileID: 823019474}

@@ -57,6 +57,24 @@ public class ModeAdvManager : MonoBehaviour
     {
         isPlacableCar = true;
         car.SetActive(false);
+
+        Invoke("AddSecurityNet", 1f);
+    }
+
+    void AddSecurityNet()
+    {
+        GameObject cubo = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        cubo.transform.localScale = new Vector3(100f, 100f, 1f);
+        cubo.transform.position = new Vector3(car.transform.position.x, car.transform.position.y, car.transform.position.z - 1.785f);
+
+        cubo.transform.Rotate(Vector3.left, 90f);
+
+        cubo.GetComponent<Renderer>().enabled = false;
+
+        Rigidbody rb = cubo.AddComponent<Rigidbody>();
+        rb.isKinematic = true;
+
+        BoxCollider boxCollider = cubo.AddComponent<BoxCollider>();
     }
 
     private void SetCarPosition()
