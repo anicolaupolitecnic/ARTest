@@ -100,31 +100,37 @@ public class ModeCirManager : MonoBehaviour
     public void SelectCar1()
     {
         selectedCar = cars[0];
+        //Instantiate(selectedCar);
     }
 
     public void SelectCar2()
     {
         selectedCar = cars[1];
+        //Instantiate(selectedCar);
     }
 
     public void SelectCar3()
     {
         selectedCar = cars[2];
+        //Instantiate(selectedCar);
     }
 
 
     public void SelectCircuit1()
     {
         selectedCircuit = circuits[0];
+        //Instantiate(selectedCircuit);
     }
 
     public void SelectCircuit2()
     {
         selectedCircuit = circuits[1];
+        //Instantiate(selectedCircuit);
     }
     public void SelectCircuit3()
     {
         selectedCircuit = circuits[2];
+        //Instantiate(selectedCircuit);
     }
 
     private void SetCircuitPosition()
