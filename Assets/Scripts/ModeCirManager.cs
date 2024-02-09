@@ -116,7 +116,6 @@ public class ModeCirManager : MonoBehaviour
     public void SelectCircuit1()
     {
         selectedCircuit = circuits[0];
-        Debug.Log(selectedCircuit.name);
     }
 
     public void SelectCircuit2()
