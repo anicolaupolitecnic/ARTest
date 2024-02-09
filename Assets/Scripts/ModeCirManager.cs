@@ -120,16 +120,24 @@ public class ModeCirManager : MonoBehaviour
     {
         selectedCircuit = circuits[0];
         //Instantiate(selectedCircuit);
+        //Transform start = GameObject.Find("StartPoint").transform;
+        //Instantiate(selectedCar, start);
     }
 
     public void SelectCircuit2()
     {
         selectedCircuit = circuits[1];
         //Instantiate(selectedCircuit);
+        //Transform start = GameObject.Find("StartPoint").transform;
+        //Instantiate(selectedCar, start);
+        //Instantiate(selectedCircuit);
     }
     public void SelectCircuit3()
     {
         selectedCircuit = circuits[2];
+        //Instantiate(selectedCircuit);
+        //Transform start = GameObject.Find("StartPoint").transform;
+        //Instantiate(selectedCar, start);
         //Instantiate(selectedCircuit);
     }
 
@@ -153,6 +161,8 @@ public class ModeCirManager : MonoBehaviour
                 {
                     Instantiate(selectedCircuit, hit.collider.gameObject.transform);
                     planeManager.enabled = isPlacableCircuit = false;
+                    Transform start = GameObject.Find("StartPoint").transform;
+                    Instantiate(selectedCar, start);
                 }
             }
         }
