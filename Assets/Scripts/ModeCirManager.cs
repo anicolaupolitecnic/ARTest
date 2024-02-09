@@ -11,15 +11,18 @@ public class ModeCirManager : MonoBehaviour
     [SerializeField] private GameObject menuModeCircuit;
     [SerializeField] private GameObject carHUD;
     [SerializeField] private GameObject car;
-    [SerializeField] public static List<GameObject> carsList;
+    [SerializeField] public GameObject[] cars;
     //Mode Circuit
     [SerializeField] private GameObject MenuSelectCar;
     [SerializeField] private GameObject MenuSelectCircuit;
     [SerializeField] private GameObject MenuGameCircuit;
     private bool isPlacableCircuit = false;
     [SerializeField] private ARPlaneManager planeManager;
-    [SerializeField] private GameObject circuit;
-    public static List<GameObject> circuitsList;
+    [SerializeField] private GameObject[] circuits;
+
+    private GameObject selectedCircuit;
+    private GameObject selectedCar;
+
     //[SerializeField] private ARTrackedImageManager tracking;
 
     private void Awake()
@@ -94,6 +97,37 @@ public class ModeCirManager : MonoBehaviour
         MenuSelectCircuit.SetActive(true);
     }
 
+    public void SelectCar1()
+    {
+        selectedCar = cars[0];
+    }
+
+    public void SelectCar2()
+    {
+        selectedCar = cars[1];
+    }
+
+    public void SelectCar3()
+    {
+        selectedCar = cars[2];
+    }
+
+
+    public void SelectCircuit1()
+    {
+        selectedCircuit = circuits[0];
+        Debug.Log(selectedCircuit.name);
+    }
+
+    public void SelectCircuit2()
+    {
+        selectedCircuit = circuits[1];
+    }
+    public void SelectCircuit3()
+    {
+        selectedCircuit = circuits[2];
+    }
+
     private void SetCircuitPosition()
     {
         if (Input.touchCount > 0)
@@ -112,7 +146,7 @@ public class ModeCirManager : MonoBehaviour
                 //Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red, 100f);
                 if (Physics.Raycast(ray, out hit))
                 {
-                    Instantiate(circuit, hit.collider.gameObject.transform);
+                    Instantiate(selectedCircuit, hit.collider.gameObject.transform);
                     planeManager.enabled = isPlacableCircuit = false;
                 }
             }

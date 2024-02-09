@@ -1099,11 +1099,15 @@ MonoBehaviour:
   menuModeCircuit: {fileID: 1983400553}
   carHUD: {fileID: 1980234688}
   car: {fileID: 1083830522}
+  cars: []
   MenuSelectCar: {fileID: 1715572312}
   MenuSelectCircuit: {fileID: 423768645}
   MenuGameCircuit: {fileID: 1983400553}
   planeManager: {fileID: 2009559915}
-  circuit: {fileID: 6787638231869810122, guid: 405a6859de3dbe547b9a4bb42d8a338f, type: 3}
+  circuits:
+  - {fileID: 2591873927512904900, guid: b10362a4f79ad72438ed6e35f1b5b680, type: 3}
+  - {fileID: 2351905569681139886, guid: 2b776f30c8f541546875dc3a97fa97bb, type: 3}
+  - {fileID: 7418940413341308785, guid: e2bf9c49fca9fa542a5b9bc7359efa40, type: 3}
 --- !u!114 &288986147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2096,6 +2100,18 @@ MonoBehaviour:
       - m_Target: {fileID: 288986146}
         m_TargetAssemblyTypeName: ModeCirManager, Assembly-CSharp
         m_MethodName: EnableModeCircuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 288986146}
+        m_TargetAssemblyTypeName: ModeCirManager, Assembly-CSharp
+        m_MethodName: SelectCircuit1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3197,6 +3213,18 @@ MonoBehaviour:
       - m_Target: {fileID: 288986146}
         m_TargetAssemblyTypeName: ModeCirManager, Assembly-CSharp
         m_MethodName: EnableModeCircuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 288986146}
+        m_TargetAssemblyTypeName: ModeCirManager, Assembly-CSharp
+        m_MethodName: SelectCircuit3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4584,6 +4612,18 @@ MonoBehaviour:
       - m_Target: {fileID: 288986146}
         m_TargetAssemblyTypeName: ModeCirManager, Assembly-CSharp
         m_MethodName: EnableModeCircuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 288986146}
+        m_TargetAssemblyTypeName: ModeCirManager, Assembly-CSharp
+        m_MethodName: SelectCircuit2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
