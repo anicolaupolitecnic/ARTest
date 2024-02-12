@@ -4,13 +4,7 @@ using UnityEngine;
 
 public class NumCheckPoint : MonoBehaviour
 {
-    public numCheckPoint NumeroChekPoint;
-    public enum numCheckPoint
-    {
-        uno,
-        dos,
-        tres,
-        cuatro,
-        cinc
-    }
+    [SerializeField] public int numeroCheckPoint;
+
+
 }
