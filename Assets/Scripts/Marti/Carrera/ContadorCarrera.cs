@@ -9,7 +9,7 @@ public class ContadorCarrera : MonoBehaviour
     [SerializeField] private TextMeshProUGUI iniciPartit;
     [SerializeField] private int contadorMaximo = 4;
 
-    private bool TimerOn = true;
+    public bool TimerOn = true;
     private float Timer;
 
     // Start is called before the first frame update

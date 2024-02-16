@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class carCheckpoint : MonoBehaviour
+public class LapControl : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI voltesUI;
+    [SerializeField] private GameObject winerUI;
+    [SerializeField] private int Laps = 2;
+
     private int contadorCheck;
     private int voltesCotxe;
+    private bool winner = false;
 
     private Vector3 transformCheckPoint;
     private GameObject CheckPoint;
@@ -15,6 +21,7 @@ public class carCheckpoint : MonoBehaviour
         transformCheckPoint = transform.position;
         contadorCheck = 0;
         voltesCotxe = 0;
+        voltesUI.SetText("Laps " + voltesCotxe.ToString() + " / " + Laps.ToString());
     }
 
     private void Update()
@@ -30,7 +37,7 @@ public class carCheckpoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("checkpoints"))
+        if (other.CompareTag("checkpoints") && winner == false)
         {
             CheckPoint = other.gameObject;
             NumCheckPoint pepito = other.gameObject.GetComponent<NumCheckPoint>();
@@ -64,7 +71,24 @@ public class carCheckpoint : MonoBehaviour
                 contadorCheck++;
                 transformCheckPoint = other.transform.position;
                 Debug.Log("CkeckPoint 5");
-                voltesCotxe++;
+            }
+        }
+        if (other.CompareTag("meta"))
+        {
+            if (contadorCheck == 5 && winner == false)
+            {
+                contadorCheck = 0;
+                if (voltesCotxe < Laps)
+                {
+                    voltesCotxe++;
+                    voltesUI.SetText("Laps " + voltesCotxe.ToString() + " / " + Laps.ToString());
+                }
+                else
+                {
+                    winerUI.SetActive(true);
+                    voltesUI.enabled = false;
+                    winner = true;
+                }
             }
         }
     }

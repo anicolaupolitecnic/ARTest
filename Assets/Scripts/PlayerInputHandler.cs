@@ -1,8 +1,11 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerInputHandler : MonoBehaviour
 {
+    [SerializeField] private ContadorCarrera timer;
+
     private WheelController wheelController;
 
     private InputActions controls;
@@ -41,17 +44,26 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Accelerate(InputAction.CallbackContext ctx)
     {
-        wheelController.SetAcceleration(ctx.ReadValue<float>());
+        if (!timer.TimerOn)
+        {
+            wheelController.SetAcceleration(ctx.ReadValue<float>());
+        }
     }
 
     private void Brake(InputAction.CallbackContext ctx)
     {
-        wheelController.SetBrakeing(ctx.ReadValue<float>());
+        if (!timer.TimerOn)
+        {
+            wheelController.SetBrakeing(ctx.ReadValue<float>());
+        }    
     }
 
     private void Turn(InputAction.CallbackContext ctx)
     {
-        wheelController.SetTurning(ctx.ReadValue<float>());
+        if (!timer.TimerOn)
+        {
+            wheelController.SetTurning(ctx.ReadValue<float>());
+        }  
     }
 
 }
