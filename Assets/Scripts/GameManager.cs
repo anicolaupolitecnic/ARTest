@@ -48,4 +48,11 @@ public class GameManager : MonoBehaviour
         modeCircuitMenu.SetActive(true);
         DisableMainMenu();
     }
+
+    public void BackToMain()
+    {
+        modeCircuitMenu.SetActive(false);
+        modeAdventureMenu.SetActive(false);
+        EnableMainMenu();
+    }
 }

@@ -42,8 +42,7 @@ public class ModeAdvManager : MonoBehaviour
 
     void Start()
     {
-        isPlacableCar = false;
-        messageText.text = "Escaneja el terra!";
+        //initModeAdventure();
 
     }
 
@@ -74,6 +73,12 @@ public class ModeAdvManager : MonoBehaviour
         }
     }
 
+    public void initModeAdventure()
+    {
+        isPlacableCar = false;
+        messageText.text = "Escaneja el terra!";
+    }
+
     private void UpdateSecurityNet()
     {
         GameObject cube = GameObject.Find("Cube");
@@ -86,6 +91,7 @@ public class ModeAdvManager : MonoBehaviour
 
     public void EnableModeAdventure()
     {
+        initModeAdventure();
         menuModeAdventure.SetActive(true);
         meshing.SetActive(true);
         gameManager.mode = gameManager.MODEADV;
@@ -183,5 +189,11 @@ public class ModeAdvManager : MonoBehaviour
         prom.carSpeed = 0f;
         prom.isDrifting = false;
         prom.isTractionLocked = false;
+    }
+
+    public void BackToMainMenu()
+    {
+        meshing.SetActive(false);
+        gameManager.BackToMain();
     }
 }
