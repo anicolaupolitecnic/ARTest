@@ -162,7 +162,7 @@ public class ModeCirManager : MonoBehaviour
                     Instantiate(selectedCircuit, hit.collider.gameObject.transform);
                     planeManager.enabled = isPlacableCircuit = false;
                     Transform start = GameObject.Find("StartPoint").transform;
-                    Instantiate(selectedCar, start);
+                    Instantiate(selectedCar, start.position, Quaternion.identity);
                 }
             }
         }

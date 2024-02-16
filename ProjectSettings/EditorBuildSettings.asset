@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Toni/Prototip.unity
-    guid: 711f5e1524f38d843a427bc1c30a9666
+    path: Assets/Scenes/Amador/Prototip.unity
+    guid: a0bc826f39fd8834da8a7df51d954fbb
   m_configObjects:
     Niantic.Lightship.AR.LightshipSettings: {fileID: 11400000, guid: dc565e79d12868648a9cd20380f41d31,
       type: 2}
