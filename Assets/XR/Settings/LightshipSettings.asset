@@ -19,8 +19,10 @@ MonoBehaviour:
   _useLightshipPersistentAnchor: 1
   _useLightshipSemanticSegmentation: 1
   _useLightshipScanning: 1
-  _overrideLoggingLevel: 0
-  _logLevel: 3
+  _useLightshipObjectDetection: 1
+  _unityLogLevel: 3
+  _fileLogLevel: 5
+  _stdoutLogLevel: 5
   _devicePlaybackSettings:
     _usePlayback: 0
     _playbackDatasetPath: 

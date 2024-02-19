@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.nianticlabs.lightship": {
-      "version": "file:C:/Users/toni/Downloads/ardk-next-3.0.0.tgz",
+      "version": "file:C:/Users/anicolau/Downloads/ardk-upm-3.3.0.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
@@ -160,7 +160,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.textmeshpro": {
-      "version": "3.0.6",
+      "version": "3.0.8",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -199,20 +199,12 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.xr-content.xr-sim-environments": {
-      "version": "file:../ContentPackages\\com.unity.xr-content.xr-sim-environments-1.0.0.tgz",
-      "depth": 0,
-      "source": "local-tarball",
-      "dependencies": {
-        "com.unity.xr.arfoundation": "5.0.0"
-      }
-    },
     "com.unity.xr.arcore": {
-      "version": "5.1.1",
+      "version": "5.1.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.xr.arfoundation": "5.1.1",
+        "com.unity.xr.arfoundation": "5.1.2",
         "com.unity.xr.core-utils": "2.1.0",
         "com.unity.xr.management": "4.0.1",
         "com.unity.modules.androidjni": "1.0.0",
@@ -221,7 +213,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.arfoundation": {
-      "version": "5.1.1",
+      "version": "5.1.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {

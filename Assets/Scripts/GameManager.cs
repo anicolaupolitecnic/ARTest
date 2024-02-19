@@ -9,7 +9,7 @@ using UnityEngine.XR.ARFoundation;
 public class GameManager : MonoBehaviour
 {
     //GENERAL
-    [SerializeField] private TextMeshProUGUI debugText;
+    [SerializeField] public TextMeshProUGUI debugText;
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject modeAdventureMenu;
     [SerializeField] private GameObject modeCircuitMenu;

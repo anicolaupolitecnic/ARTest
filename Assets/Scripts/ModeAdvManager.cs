@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEngine.XR.ARFoundation;
 
 public class ModeAdvManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class ModeAdvManager : MonoBehaviour
     private float timer;
     private float playTime;
     private float targetTime = 3;
+    private bool isTrackableBigEnough = false;
     private bool scanTimeDone = false;
     private GameManager gameManager;
     public Camera aRCamera;
@@ -48,27 +50,32 @@ public class ModeAdvManager : MonoBehaviour
 
     void Update()
     {
-        timer += Time.deltaTime;
-
-        if (timer >= targetTime && !scanTimeDone)
+        if (gameManager.mode == gameManager.MODEADV)
         {
-            scanTimeDone = true;
-            if (gameManager.mode == gameManager.MODEADV)
+            timer += Time.deltaTime;
+
+            if (!isTrackableBigEnough)
             {
+                CheckTrackables();
+
+            }
+            else if (/*timer >= targetTime &&*/ isTrackableBigEnough && !scanTimeDone)
+            {
+                scanTimeDone = true;
                 messageText.text = "Toca al terra on vols que aparegui el cotxe!";
                 isPlacableCar = true;
             }
-        } 
-        else
-        {
-            playTime = Time.time - timer;
-            minutes = Mathf.FloorToInt(playTime / 60f);
-            seconds = Mathf.FloorToInt(playTime % 60f);
-            timerTxt.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-
-            if (isPlacableCar)
+            else
             {
-                SetCarPosition();
+                playTime = Time.time - timer;
+                minutes = Mathf.FloorToInt(playTime / 60f);
+                seconds = Mathf.FloorToInt(playTime % 60f);
+                timerTxt.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+                if (isPlacableCar)
+                {
+                    SetCarPosition();
+                }
             }
         }
     }
@@ -195,5 +202,23 @@ public class ModeAdvManager : MonoBehaviour
     {
         meshing.SetActive(false);
         gameManager.BackToMain();
+    }
+
+    private void CheckTrackables()
+    {
+        Debug.Log("checking trackables");
+        GameObject trackables = GameObject.Find("Trackables");
+        int i = 0;
+        foreach (Transform child in trackables.transform)
+        {
+            i++;
+            Vector3 localPosition = child.localPosition;
+            Debug.Log(localPosition);
+            gameManager.debugText.text = localPosition.ToString();
+        }
+        if (i > 15)
+        {
+            isTrackableBigEnough = true;
+        }
     }
 }

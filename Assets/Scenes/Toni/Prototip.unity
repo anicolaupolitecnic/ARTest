@@ -318,7 +318,7 @@ PrefabInstance:
     - target: {fileID: 4051576766794741457, guid: 9b37855f8bc93f544b7020a5ac858e9a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6426600689159857490, guid: 9b37855f8bc93f544b7020a5ac858e9a,
         type: 3}
@@ -884,7 +884,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1470278009}
   - {fileID: 1321795197}
   - {fileID: 620744148}
   - {fileID: 159731720}
@@ -964,7 +963,7 @@ MonoBehaviour:
   aRCamera: {fileID: 1654453255}
   menuModeCircuit: {fileID: 1983400553}
   carHUD: {fileID: 1980234688}
-  car: {fileID: 823019475}
+  car: {fileID: 0}
   cars: []
   MenuSelectCar: {fileID: 1715572312}
   MenuSelectCircuit: {fileID: 423768645}
@@ -991,7 +990,7 @@ MonoBehaviour:
   respawnCarButton: {fileID: 1138202851}
   respawnCarText: {fileID: 1411021910}
   carHUD: {fileID: 118809974}
-  car: {fileID: 823019475}
+  car: {fileID: 0}
   messageText: {fileID: 1262640963}
   timerTxt: {fileID: 118809973}
 --- !u!1 &290796062
@@ -2115,7 +2114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &620744148
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2132,6 +2131,7 @@ RectTransform:
   - {fileID: 1710025901}
   - {fileID: 118809972}
   - {fileID: 1560656499}
+  - {fileID: 1470278009}
   m_Father: {fileID: 279937959}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4408,7 +4408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1470278009
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4421,7 +4421,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 279937959}
+  m_Father: {fileID: 620744148}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
