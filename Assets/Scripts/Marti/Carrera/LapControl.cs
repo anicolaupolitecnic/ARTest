@@ -6,34 +6,57 @@ using UnityEngine;
 public class LapControl : MonoBehaviour
 {
     private TextMeshProUGUI voltesUI;
+    private TextMeshProUGUI cronometroUI;
+    private ContadorCarrera timer;
     private GameObject canvasMapa;
     private GameObject winnerUI;
+
+    [SerializeField] private List<float> bestLap = new List<float>();
 
     [SerializeField] private int Laps = 2;
     [SerializeField] private float RespawnY = -10;
 
     private int contadorCheck;
     private int voltesCotxe;
+    private float cronometroCheck;
     private bool winner = false;
+    private bool carrera;
 
     private Vector3 transformCheckPoint;
     private GameObject CheckPoint;
 
     private void Start()
     {
+        timer = GameObject.Find("UI").GetComponent<ContadorCarrera>();
         canvasMapa = GameObject.Find("UI");
         voltesUI = canvasMapa.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();
+        cronometroUI = canvasMapa.transform.GetChild(0).GetChild(3).GetComponent<TextMeshProUGUI>();
         winnerUI = canvasMapa.transform.GetChild(0).GetChild(2).gameObject;
 
 
+        voltesUI.enabled = false;
+        cronometroUI.enabled = false;
         transformCheckPoint = transform.position;
         contadorCheck = 0;
         voltesCotxe = 1;
+        cronometroCheck = 0;
         voltesUI.SetText("Laps " + voltesCotxe.ToString() + " / " + Laps.ToString());
     }
 
     private void Update()
     {
+
+        if (!timer.TimerOn)
+        {
+            voltesUI.enabled = true;
+            carrera = true;
+            cronometroUI.enabled = true;
+
+            cronometroCheck += Time.deltaTime;
+
+            cronometroUI.text = cronometroCheck.ToString("f1");
+        }
+
         if (gameObject.transform.position.y < (RespawnY))
         {
             Rigidbody rb = GetComponent<Rigidbody>();
@@ -90,6 +113,8 @@ public class LapControl : MonoBehaviour
                 {
                     voltesCotxe++;
                     voltesUI.SetText("Laps " + voltesCotxe.ToString() + " / " + Laps.ToString());
+                    bestLap.Add(cronometroCheck);
+                    contadorCheck = 0;
                 }
                 else
                 {
