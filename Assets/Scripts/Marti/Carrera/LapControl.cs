@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class LapControl : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI voltesUI;
-    [SerializeField] private GameObject winerUI;
+    private TextMeshProUGUI voltesUI;
+    private GameObject canvasMapa;
+    private GameObject winnerUI;
+
     [SerializeField] private int Laps = 2;
 
     private int contadorCheck;
@@ -18,6 +20,11 @@ public class LapControl : MonoBehaviour
 
     private void Start()
     {
+        canvasMapa = GameObject.Find("UI");
+        voltesUI = canvasMapa.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
+        winnerUI = canvasMapa.transform.GetChild(0).GetChild(1).gameObject;
+
+
         transformCheckPoint = transform.position;
         contadorCheck = 0;
         voltesCotxe = 0;
@@ -85,7 +92,7 @@ public class LapControl : MonoBehaviour
                 }
                 else
                 {
-                    winerUI.SetActive(true);
+                    winnerUI.SetActive(true);
                     voltesUI.enabled = false;
                     winner = true;
                 }
