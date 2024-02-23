@@ -4,11 +4,16 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    [SerializeField] private ContadorCarrera timer;
+    private ContadorCarrera timer;
 
     private WheelController wheelController;
 
     private InputActions controls;
+
+    private void Start()
+    {
+        timer = GameObject.Find("UI").GetComponent<ContadorCarrera>();
+    }
 
     private void OnEnable()
     {
