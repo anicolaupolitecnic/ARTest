@@ -62,7 +62,6 @@ public class ModeAdvManager : MonoBehaviour
             else if (/*timer >= targetTime &&*/ isTrackableBigEnough && !scanTimeDone)
             {
                 scanTimeDone = true;
-                messageText.text = "Toca al terra on vols que aparegui el cotxe!";
                 isPlacableCar = true;
             }
             else
@@ -71,18 +70,19 @@ public class ModeAdvManager : MonoBehaviour
                 minutes = Mathf.FloorToInt(playTime / 60f);
                 seconds = Mathf.FloorToInt(playTime % 60f);
                 timerTxt.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            }
 
-                if (isPlacableCar)
-                {
-                    SetCarPosition();
-                }
+            if (scanTimeDone && isPlacableCar)
+            {
+                messageText.text = "Toca al terra on vols que aparegui el cotxe!";
+                SetCarPosition();
             }
         }
     }
 
     public void initModeAdventure()
     {
-        isPlacableCar = false;
+        scanTimeDone = isTrackableBigEnough = isPlacableCar = false;
         messageText.text = "Escaneja el terra!";
     }
 
@@ -196,6 +196,7 @@ public class ModeAdvManager : MonoBehaviour
         prom.carSpeed = 0f;
         prom.isDrifting = false;
         prom.isTractionLocked = false;
+        prom.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
     public void BackToMainMenu()
@@ -216,7 +217,7 @@ public class ModeAdvManager : MonoBehaviour
             Debug.Log(localPosition);
             gameManager.debugText.text = localPosition.ToString();
         }
-        if (i > 15)
+        if (i > 7)
         {
             isTrackableBigEnough = true;
         }
