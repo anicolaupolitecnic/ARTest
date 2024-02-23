@@ -10,6 +10,7 @@ public class LapControl : MonoBehaviour
     private GameObject winnerUI;
 
     [SerializeField] private int Laps = 2;
+    [SerializeField] private float RespawnY = -10;
 
     private int contadorCheck;
     private int voltesCotxe;
@@ -21,19 +22,19 @@ public class LapControl : MonoBehaviour
     private void Start()
     {
         canvasMapa = GameObject.Find("UI");
-        voltesUI = canvasMapa.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
-        winnerUI = canvasMapa.transform.GetChild(0).GetChild(1).gameObject;
+        voltesUI = canvasMapa.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();
+        winnerUI = canvasMapa.transform.GetChild(0).GetChild(2).gameObject;
 
 
         transformCheckPoint = transform.position;
         contadorCheck = 0;
-        voltesCotxe = 0;
+        voltesCotxe = 1;
         voltesUI.SetText("Laps " + voltesCotxe.ToString() + " / " + Laps.ToString());
     }
 
     private void Update()
     {
-        if (gameObject.transform.position.y < (-5))
+        if (gameObject.transform.position.y < (RespawnY))
         {
             Rigidbody rb = GetComponent<Rigidbody>();
             transform.position = transformCheckPoint;
