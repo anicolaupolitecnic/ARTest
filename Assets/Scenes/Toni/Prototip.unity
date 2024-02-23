@@ -268,12 +268,12 @@ PrefabInstance:
     - target: {fileID: 1053292033094153562, guid: 9b37855f8bc93f544b7020a5ac858e9a,
         type: 3}
       propertyPath: m_Delegates.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1053292033094153562, guid: 9b37855f8bc93f544b7020a5ac858e9a,
         type: 3}
       propertyPath: m_Delegates.Array.data[0].eventID
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1053292033094153562, guid: 9b37855f8bc93f544b7020a5ac858e9a,
         type: 3}
@@ -284,31 +284,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 288986147}
+      objectReference: {fileID: 1503541852}
     - target: {fileID: 1053292033094153562, guid: 9b37855f8bc93f544b7020a5ac858e9a,
         type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 288986147}
+      objectReference: {fileID: 1503541852}
     - target: {fileID: 1053292033094153562, guid: 9b37855f8bc93f544b7020a5ac858e9a,
         type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RespawnCar
+      value: ButtonDown
       objectReference: {fileID: 0}
     - target: {fileID: 1053292033094153562, guid: 9b37855f8bc93f544b7020a5ac858e9a,
         type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RespawnCar
+      value: ButtonUp
       objectReference: {fileID: 0}
     - target: {fileID: 1053292033094153562, guid: 9b37855f8bc93f544b7020a5ac858e9a,
         type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ModeAdvManager, Assembly-CSharp
+      value: PrometeoTouchInput, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1053292033094153562, guid: 9b37855f8bc93f544b7020a5ac858e9a,
         type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ModeAdvManager, Assembly-CSharp
+      value: PrometeoTouchInput, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3856852392095849295, guid: 9b37855f8bc93f544b7020a5ac858e9a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4051576766794741457, guid: 9b37855f8bc93f544b7020a5ac858e9a,
         type: 3}
@@ -319,6 +324,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570460228196864448, guid: 9b37855f8bc93f544b7020a5ac858e9a,
+        type: 3}
+      propertyPath: m_Delegates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570460228196864448, guid: 9b37855f8bc93f544b7020a5ac858e9a,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].eventID
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570460228196864448, guid: 9b37855f8bc93f544b7020a5ac858e9a,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570460228196864448, guid: 9b37855f8bc93f544b7020a5ac858e9a,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 288986147}
+    - target: {fileID: 4570460228196864448, guid: 9b37855f8bc93f544b7020a5ac858e9a,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SpawnCar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570460228196864448, guid: 9b37855f8bc93f544b7020a5ac858e9a,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ModeAdvManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5180462236879737874, guid: 9b37855f8bc93f544b7020a5ac858e9a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 273.5
       objectReference: {fileID: 0}
     - target: {fileID: 6426600689159857490, guid: 9b37855f8bc93f544b7020a5ac858e9a,
         type: 3}
@@ -424,6 +464,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -659
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633287314858021173, guid: 9b37855f8bc93f544b7020a5ac858e9a,
+        type: 3}
+      propertyPath: m_text
+      value: TxtTIME
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -984,13 +1029,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aRCamera: {fileID: 1654453255}
   menuModeAdventure: {fileID: 620744147}
-  arMeshManager: {fileID: 560199279}
-  meshing: {fileID: 1853250303}
+  arMeshManager: {fileID: 0}
+  meshing: {fileID: 0}
   scanButtonText: {fileID: 1677564850}
   respawnCarButton: {fileID: 1138202851}
   respawnCarText: {fileID: 1411021910}
   carHUD: {fileID: 118809974}
-  car: {fileID: 0}
+  car: {fileID: 823019475}
   messageText: {fileID: 1262640963}
   timerTxt: {fileID: 118809973}
 --- !u!1 &290796062
@@ -1281,6 +1326,14 @@ PrefabInstance:
       value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 1177691415743354, guid: 48cb3fb68c91eb94999fd99957eb0cae, type: 3}
+      propertyPath: _targetFrameRate
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177691415743354, guid: 48cb3fb68c91eb94999fd99957eb0cae, type: 3}
+      propertyPath: _meshCullingDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177691415743354, guid: 48cb3fb68c91eb94999fd99957eb0cae, type: 3}
       propertyPath: _allowList.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -1302,7 +1355,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1177691415743354, guid: 48cb3fb68c91eb94999fd99957eb0cae, type: 3}
       propertyPath: _enableDistanceBasedVolumetricCleanup
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512387470319625104, guid: 48cb3fb68c91eb94999fd99957eb0cae,
+        type: 3}
+      propertyPath: m_ModelPrefab
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2512387470319625105, guid: 48cb3fb68c91eb94999fd99957eb0cae,
         type: 3}
@@ -1418,12 +1476,17 @@ PrefabInstance:
     - target: {fileID: 4795478237086065138, guid: 48cb3fb68c91eb94999fd99957eb0cae,
         type: 3}
       propertyPath: m_Density
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4795478237086065138, guid: 48cb3fb68c91eb94999fd99957eb0cae,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795478237086065138, guid: 48cb3fb68c91eb94999fd99957eb0cae,
+        type: 3}
+      propertyPath: m_Normals
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4795478237086065138, guid: 48cb3fb68c91eb94999fd99957eb0cae,
         type: 3}
@@ -1444,7 +1507,7 @@ PrefabInstance:
     - target: {fileID: 4795478237086065138, guid: 48cb3fb68c91eb94999fd99957eb0cae,
         type: 3}
       propertyPath: m_ConcurrentQueueSize
-      value: 4
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5004497799282344350, guid: 48cb3fb68c91eb94999fd99957eb0cae,
         type: 3}
@@ -1541,16 +1604,16 @@ MonoBehaviour:
   RLWTireSkid: {fileID: 0}
   RRWTireSkid: {fileID: 0}
   useUI: 1
-  carSpeedText: {fileID: 0}
+  carSpeedText: {fileID: 1883417614}
   useSounds: 0
   carEngineSound: {fileID: 0}
   tireScreechSound: {fileID: 0}
   useTouchControls: 1
-  throttleButton: {fileID: 0}
-  reverseButton: {fileID: 0}
-  turnRightButton: {fileID: 0}
-  turnLeftButton: {fileID: 0}
-  handbrakeButton: {fileID: 0}
+  throttleButton: {fileID: 732464980}
+  reverseButton: {fileID: 1503541850}
+  turnRightButton: {fileID: 1117129295}
+  turnLeftButton: {fileID: 1507863159}
+  handbrakeButton: {fileID: 2069826467}
   carSpeed: 0
   isDrifting: 0
   isTractionLocked: 0
@@ -1954,18 +2017,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544831925}
   m_CullTransparentMesh: 1
---- !u!114 &560199279 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4795478237086065138, guid: 48cb3fb68c91eb94999fd99957eb0cae,
-    type: 3}
-  m_PrefabInstance: {fileID: 331264285}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1853250303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 968053edfd89749c48f4ea5d444abf64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &610407421
 GameObject:
   m_ObjectHideFlags: 0
@@ -2598,6 +2649,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702824525}
   m_CullTransparentMesh: 1
+--- !u!1 &732464980 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2062776768056337842, guid: 9b37855f8bc93f544b7020a5ac858e9a,
+    type: 3}
+  m_PrefabInstance: {fileID: 118809971}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &823019474
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2609,17 +2666,17 @@ PrefabInstance:
     - target: {fileID: 564193224984687848, guid: 8e209d81bcad719419520ac111314325,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 564193224984687848, guid: 8e209d81bcad719419520ac111314325,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 564193224984687848, guid: 8e209d81bcad719419520ac111314325,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 564193224984687848, guid: 8e209d81bcad719419520ac111314325,
         type: 3}
@@ -3551,6 +3608,12 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &1117129295 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4697152701741069463, guid: 9b37855f8bc93f544b7020a5ac858e9a,
+    type: 3}
+  m_PrefabInstance: {fileID: 118809971}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1138202851 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6223874460378856887, guid: 9b37855f8bc93f544b7020a5ac858e9a,
@@ -4525,6 +4588,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1470278008}
   m_CullTransparentMesh: 1
+--- !u!1 &1503541850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2880852910751072496, guid: 9b37855f8bc93f544b7020a5ac858e9a,
+    type: 3}
+  m_PrefabInstance: {fileID: 118809971}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1503541852 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1582630251892308366, guid: 9b37855f8bc93f544b7020a5ac858e9a,
+    type: 3}
+  m_PrefabInstance: {fileID: 118809971}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503541850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7408ad19eb3ad44a35af48d0d2294b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1507863159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6351324968352302665, guid: 9b37855f8bc93f544b7020a5ac858e9a,
+    type: 3}
+  m_PrefabInstance: {fileID: 118809971}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1524674721
 GameObject:
   m_ObjectHideFlags: 0
@@ -6012,12 +6099,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1793373543}
   m_CullTransparentMesh: 1
---- !u!1 &1853250303 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5004497799282344350, guid: 48cb3fb68c91eb94999fd99957eb0cae,
+--- !u!114 &1883417614 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5551860799794061406, guid: 9b37855f8bc93f544b7020a5ac858e9a,
     type: 3}
-  m_PrefabInstance: {fileID: 331264285}
+  m_PrefabInstance: {fileID: 118809971}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1956965695
 GameObject:
   m_ObjectHideFlags: 0
@@ -6839,6 +6932,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055194616}
   m_CullTransparentMesh: 0
+--- !u!1 &2069826467 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5219398094533710619, guid: 9b37855f8bc93f544b7020a5ac858e9a,
+    type: 3}
+  m_PrefabInstance: {fileID: 118809971}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2073849990
 GameObject:
   m_ObjectHideFlags: 0

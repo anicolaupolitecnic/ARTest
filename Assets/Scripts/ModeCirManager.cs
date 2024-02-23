@@ -119,9 +119,9 @@ public class ModeCirManager : MonoBehaviour
     public void SelectCircuit1()
     {
         selectedCircuit = circuits[0];
-        //Instantiate(selectedCircuit);
-        //Transform start = GameObject.Find("StartPoint").transform;
-        //Instantiate(selectedCar, start);
+        Instantiate(selectedCircuit);
+        Transform start = GameObject.Find("StartPoint").transform;
+        Instantiate(selectedCar, start.position, Quaternion.identity);
     }
 
     public void SelectCircuit2()
