@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
-public class ModeCirManager : MonoBehaviour
+public class ModeAdventure : MonoBehaviour
 {
     private GameManager gameManager;
     public Camera aRCamera;

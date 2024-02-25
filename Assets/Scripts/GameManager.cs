@@ -11,19 +11,34 @@ public class GameManager : MonoBehaviour
     //GENERAL
     [SerializeField] public TextMeshProUGUI debugText;
     [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject optionsMenu;
+    [SerializeField] private GameObject modeXperimentMenu;
     [SerializeField] private GameObject modeAdventureMenu;
     [SerializeField] private GameObject modeCircuitMenu;
 
     //STATE MACHINE
     public int MODEMAINMENU = 0;
-    public int MODEADV = 1;
+    public int MODEXPER = 1;
     public int MODECIR = 2;
+    public int MODEADV = 3;
     public int mode = 0;
-    private ModeAdvManager modeAdvManager;
+    private ModeXperiment modeXperManager;
 
     private void Awake()
     {
-        modeAdvManager = GetComponent<ModeAdvManager>();
+        modeXperManager = GetComponent<ModeXperiment>();
+    }
+
+    public void EnableOptionsMenu()
+    {
+        mainMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+    }
+
+    public void DisableOptionsMenu()
+    {
+        optionsMenu.SetActive(false);
+        mainMenu.SetActive(true);
     }
 
     public void DisableMainMenu()
@@ -36,16 +51,22 @@ public class GameManager : MonoBehaviour
         mainMenu.SetActive(true);
     }
 
-    public void SelectModeAdventure()
+    public void SelectModeXperiment()
     {
-        //modeAdventureMenu.SetActive(true);
-        modeAdvManager.EnableModeAdventure();
+        //modeXperManager.SetActive(true);
+        modeXperManager.EnableModeAdventure();
         DisableMainMenu();
     }
 
     public void SelectModeCircuit()
     {
         modeCircuitMenu.SetActive(true);
+        DisableMainMenu();
+    }
+
+    public void SelectModeAdventure()
+    {
+        modeAdventureMenu.SetActive(true);
         DisableMainMenu();
     }
 

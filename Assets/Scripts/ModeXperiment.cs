@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.XR.ARFoundation;
 
-public class ModeAdvManager : MonoBehaviour
+public class ModeXperiment : MonoBehaviour
 {
     private float timer;
     private float playTime;
@@ -42,15 +42,9 @@ public class ModeAdvManager : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    void Start()
-    {
-        //initModeAdventure();
-
-    }
-
     void Update()
     {
-        if (gameManager.mode == gameManager.MODEADV)
+        if (gameManager.mode == gameManager.MODEXPER)
         {
             timer += Time.deltaTime;
 
@@ -80,7 +74,7 @@ public class ModeAdvManager : MonoBehaviour
         }
     }
 
-    public void initModeAdventure()
+    public void initModeXperiment()
     {
         scanTimeDone = isTrackableBigEnough = isPlacableCar = false;
         messageText.text = "Escaneja el terra!";
@@ -98,10 +92,10 @@ public class ModeAdvManager : MonoBehaviour
 
     public void EnableModeAdventure()
     {
-        initModeAdventure();
+        initModeXperiment();
         menuModeAdventure.SetActive(true);
         meshing.SetActive(true);
-        gameManager.mode = gameManager.MODEADV;
+        gameManager.mode = gameManager.MODEXPER;
     }
 
 
@@ -109,26 +103,7 @@ public class ModeAdvManager : MonoBehaviour
     {
         isPlacableCar = true;
         car.SetActive(false);
-        //spawnCarButton.SetActive(false);
     }
-
-    //void AddSecurityNet()
-    //{
-    //    GameObject cubo = GameObject.CreatePrimitive(PrimitiveType.Cube);
-    //    cubo.transform.localScale = new Vector3(1f, 1f, 0.05f);
-    //    cubo.transform.position = new Vector3(car.transform.position.x, car.transform.position.y - 0.04f, car.transform.position.z);
-
-    //    cubo.transform.Rotate(Vector3.left, 90f);
-
-    //    cubo.GetComponent<Renderer>().enabled = false;
-
-    //    Rigidbody rb = cubo.AddComponent<Rigidbody>();
-    //    rb.isKinematic = true;
-    //    rb.useGravity = false;
-    //    rb.constraints = RigidbodyConstraints.FreezeRotation;
-
-    //    BoxCollider boxCollider = cubo.AddComponent<BoxCollider>();
-    //}
 
     private void SetCarPosition()
     {

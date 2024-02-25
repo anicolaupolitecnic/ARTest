@@ -6,6 +6,7 @@ TagManager:
   tags:
   - checkpoints
   - meta
+  - SoundManager
   layers:
   - Default
   - TransparentFX
