@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour {
 	// Audio players components.
-	private AudioSource fxSource;
-    private AudioSource musicSource;
+	[SerializeField] private AudioSource fxSource;
+    [SerializeField] private AudioSource musicSource;
+	[SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider fxSlider;
 
-	public AudioClip menuMusic;
+    public AudioClip menuMusic;
 	public AudioClip modeAdvMusic;
     public AudioClip modeCirMusic;
     public AudioClip modeXperMusic;
@@ -32,9 +36,6 @@ public class SoundManager : MonoBehaviour {
 		//}
 		////Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
 		//DontDestroyOnLoad(this.gameObject);
-
-  //      musicSource = this.transform.GetChild(0).GetComponent<AudioSource>();
-  //      fxSource = this.transform.GetChild(1).GetComponent<AudioSource>();
 	}
 
 	// Play a single clip through the sound effects source.
@@ -99,11 +100,12 @@ public class SoundManager : MonoBehaviour {
 		musicSource.Stop();
 	}
 
-	public void setMusicVolume(float f) {
-		musicSource.volume = f;
+	public void setMusicVolume() {
+        musicSource.volume = musicSlider.value;
 	}
 
-	public void setFXVolume(float f) {
-		fxSource.volume = f;
-	}
+	public void setFXVolume() {
+        fxSource.volume = fxSlider.value;
+		PlayFX(fx_Options);
+    }
 }
