@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
-public class ModeCirManager : MonoBehaviour
+public class ModeAdventure : MonoBehaviour
 {
     private GameManager gameManager;
     public Camera aRCamera;
@@ -15,6 +15,7 @@ public class ModeCirManager : MonoBehaviour
     private bool isPlacableEnvironment = false;
     [SerializeField] private ARPlaneManager planeManager;
     [SerializeField] private GameObject environment;
+    [SerializeField] private GameObject dino;
 
     private void Awake()
     {
