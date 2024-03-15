@@ -16,6 +16,7 @@ public class ModeCirManager : MonoBehaviour
     [SerializeField] private GameObject MenuSelectCar;
     [SerializeField] private GameObject MenuSelectCircuit;
     [SerializeField] private GameObject MenuGameCircuit;
+    [SerializeField] private GameObject UIGameCircuit;
     private bool isPlacableCircuit = false;
     [SerializeField] private ARPlaneManager planeManager;
     [SerializeField] private GameObject[] circuits;
@@ -54,6 +55,7 @@ public class ModeCirManager : MonoBehaviour
         MenuSelectCar.SetActive(false);
         MenuSelectCircuit.SetActive(false);
         MenuGameCircuit.SetActive(true);
+        UIGameCircuit.SetActive(true);
 
         planeManager.enabled = true;
         gameManager.mode = gameManager.MODECIR;
@@ -115,30 +117,32 @@ public class ModeCirManager : MonoBehaviour
         //Instantiate(selectedCar);
     }
 
-
-    public void SelectCircuit1()
+    private void SpawnTest()
     {
-        selectedCircuit = circuits[0];
         Instantiate(selectedCircuit);
         Transform start = GameObject.Find("StartPoint").transform;
         Instantiate(selectedCar, start.position, Quaternion.identity);
     }
 
+
+    public void SelectCircuit1()
+    {
+        selectedCircuit = circuits[0];
+        selectedCar.transform.localScale = new Vector3(0.035f, 0.035f, 0.035f);
+        SpawnTest();
+    }
+
     public void SelectCircuit2()
     {
         selectedCircuit = circuits[1];
-        //Instantiate(selectedCircuit);
-        //Transform start = GameObject.Find("StartPoint").transform;
-        //Instantiate(selectedCar, start);
-        //Instantiate(selectedCircuit);
+        selectedCar.transform.localScale = new Vector3(0.005f, 0.005f, 0.005f);
+        SpawnTest();
     }
     public void SelectCircuit3()
     {
         selectedCircuit = circuits[2];
-        //Instantiate(selectedCircuit);
-        //Transform start = GameObject.Find("StartPoint").transform;
-        //Instantiate(selectedCar, start);
-        //Instantiate(selectedCircuit);
+        selectedCar.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+        SpawnTest();
     }
 
     private void SetCircuitPosition()
