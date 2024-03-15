@@ -613,7 +613,7 @@ GameObject:
   - component: {fileID: 4221003180263177796}
   - component: {fileID: 7089841404794704623}
   m_Layer: 0
-  m_Name: Car3Move
+  m_Name: Car3MoveMini
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -719,8 +719,8 @@ MonoBehaviour:
   roll: {fileID: 0}
   frontTraction: 1
   backTraction: 1
-  accelerationForce: 500
-  backwardsAccelerationForce: 500
+  accelerationForce: 50
+  backwardsAccelerationForce: 50
   brakeingForce: 1000
   maxTurnAngle: 30
   centerOfMassOffset: {x: 0, y: 0, z: 0}
