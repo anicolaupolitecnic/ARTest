@@ -16,6 +16,7 @@ public class ModeCirManager : MonoBehaviour
     [SerializeField] private GameObject MenuSelectCar;
     [SerializeField] private GameObject MenuSelectCircuit;
     [SerializeField] private GameObject MenuGameCircuit;
+    [SerializeField] private GameObject UIGameCircuit;
     private bool isPlacableCircuit = false;
     [SerializeField] private ARPlaneManager planeManager;
     [SerializeField] private GameObject[] circuits;
@@ -54,6 +55,7 @@ public class ModeCirManager : MonoBehaviour
         MenuSelectCar.SetActive(false);
         MenuSelectCircuit.SetActive(false);
         MenuGameCircuit.SetActive(true);
+        UIGameCircuit.SetActive(true);
 
         planeManager.enabled = true;
         gameManager.mode = gameManager.MODECIR;
@@ -119,27 +121,27 @@ public class ModeCirManager : MonoBehaviour
     public void SelectCircuit1()
     {
         selectedCircuit = circuits[0];
-        selectedCar.transform.localScale = new Vector3(0.07f, 0.07f, 0.07f);
-        //Instantiate(selectedCircuit);
-        //Transform start = GameObject.Find("StartPoint").transform;
-        //Instantiate(selectedCar, start.position, Quaternion.identity);
+        selectedCar.transform.localScale = new Vector3(0.035f, 0.035f, 0.035f);
+        Instantiate(selectedCircuit);
+        Transform start = GameObject.Find("StartPoint").transform;
+        Instantiate(selectedCar, start.position, Quaternion.identity);
     }
 
     public void SelectCircuit2()
     {
         selectedCircuit = circuits[1];
         selectedCar.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
-        Instantiate(selectedCircuit);
-        Transform start = GameObject.Find("StartPoint").transform;
-        Instantiate(selectedCar, start.position, Quaternion.identity);
+        //Instantiate(selectedCircuit);
+        //Transform start = GameObject.Find("StartPoint").transform;
+        //Instantiate(selectedCar, start.position, Quaternion.identity);
     }
     public void SelectCircuit3()
     {
         selectedCircuit = circuits[2];
         selectedCar.transform.localScale = new Vector3(0.03f, 0.03f, 0.03f);
-        Instantiate(selectedCircuit);
-        Transform start = GameObject.Find("StartPoint").transform;
-        Instantiate(selectedCar, start.position, Quaternion.identity);
+        //Instantiate(selectedCircuit);
+        //Transform start = GameObject.Find("StartPoint").transform;
+        //Instantiate(selectedCar, start.position, Quaternion.identity);
     }
 
     private void SetCircuitPosition()
