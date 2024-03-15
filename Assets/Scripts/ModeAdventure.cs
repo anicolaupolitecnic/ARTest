@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
@@ -11,20 +12,29 @@ public class ModeAdventure : MonoBehaviour
     [SerializeField] private GameObject menuModeAdventure;
     [SerializeField] private GameObject carHUD;
     [SerializeField] private GameObject car;
+    [SerializeField] private TextMeshProUGUI infoText;
+
     //Mode Adventure
     private bool isPlacableEnvironment = false;
     [SerializeField] private ARPlaneManager planeManager;
     [SerializeField] private GameObject environment;
-    [SerializeField] private GameObject dino;
+
+    private GameObject myCar;
+    private GameObject myEnvironment;
 
     private void Awake()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
+    private void Start()
+    {
+        infoText.text = "Escaneja una superficie";
+    }
+
     void Update()
     {
-        if (gameManager.mode == gameManager.MODECIR)
+        if (gameManager.mode == gameManager.MODEADV)
         {
             if (isPlacableEnvironment)
             {
@@ -35,6 +45,7 @@ public class ModeAdventure : MonoBehaviour
 
     public void EnableModeAdventure()
     {
+        carHUD.SetActive(false);
         menuModeAdventure.SetActive(true);
         planeManager.enabled = true;
         gameManager.mode = gameManager.MODEADV;
@@ -43,18 +54,18 @@ public class ModeAdventure : MonoBehaviour
 
     public void BackButton()
     {
+        carHUD.SetActive(false);
         menuModeAdventure.SetActive(false);
         planeManager.enabled = false;
         gameManager.EnableMainMenu();
+        
+        if (myCar != null)
+            Destroy(myCar);
+        if (myEnvironment != null)
+            Destroy(myEnvironment);
 
         //BOTH
         GameObject go = GameObject.Find("Trackables");
-        if (go != null)
-        {
-            Destroy(go);
-        }
-        //CIRCUIT
-        go = GameObject.Find("DEMO");
         if (go != null)
         {
             Destroy(go);
@@ -82,12 +93,44 @@ public class ModeAdventure : MonoBehaviour
                 //Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red, 100f);
                 if (Physics.Raycast(ray, out hit))
                 {
-                    Instantiate(environment, hit.collider.gameObject.transform);
+                    myEnvironment = Instantiate(environment, hit.collider.gameObject.transform);
+
+                    Collider collider = GetComponent<Collider>();
+
+                    if (collider != null)
+                    {
+                        Vector3 size = collider.bounds.size;
+                        myEnvironment.transform.position -= size * 0.5f;
+                    }
+
+                    myEnvironment.transform.rotation = Quaternion.Euler(Vector3.zero);
                     planeManager.enabled = isPlacableEnvironment = false;
                     Transform start = GameObject.Find("StartPoint").transform;
-                    Instantiate(car, start.position, Quaternion.identity);
+                    myCar =  Instantiate(car, start.position, Quaternion.identity);
+                    infoText.text = "";
+                    carHUD.SetActive(true);
                 }
             }
+        }
+
+        if (isPlacableEnvironment)
+        {
+            isPlacableEnvironment= false;
+
+            myEnvironment = Instantiate(environment, environment.transform);
+
+            Collider collider = GetComponent<Collider>();
+
+            if (collider != null)
+            {
+                Vector3 size = collider.bounds.size;
+                myEnvironment.transform.position -= size * 0.5f;
+            }
+
+            myEnvironment.transform.rotation = Quaternion.Euler(Vector3.zero);
+            planeManager.enabled = isPlacableEnvironment = false;
+            Transform start = GameObject.Find("StartPoint").transform;
+            myCar = Instantiate(car, start.position, Quaternion.identity);
         }
     }
 }

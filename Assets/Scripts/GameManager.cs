@@ -66,8 +66,9 @@ public class GameManager : MonoBehaviour
 
     public void SelectModeAdventure()
     {
-        modeAdventureMenu.SetActive(true);
+        //modeAdventureMenu.SetActive(true);
         DisableMainMenu();
+        GetComponent<ModeAdventure>().EnableModeAdventure();
     }
 
     public void BackToMain()

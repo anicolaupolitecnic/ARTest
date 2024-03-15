@@ -1573,11 +1573,11 @@ MonoBehaviour:
   aRCamera: {fileID: 1654453255}
   menuModeAdventure: {fileID: 171278965}
   carHUD: {fileID: 1151095765}
-  car: {fileID: 2256523591621164922}
+  car: {fileID: 823019475}
+  infoText: {fileID: 317580922}
   planeManager: {fileID: 2009559915}
-  environment: {fileID: 7828881303135145269, guid: d8b454ea096b4eb458e549acf6ec8506,
+  environment: {fileID: 6515790499391369192, guid: 8f394f8cb8377a64397cdf9978240286,
     type: 3}
-  dino: {fileID: 1315054755767639496, guid: e9045da21e78dff429ac54a1a3ecbc9b, type: 3}
 --- !u!1 &290796062
 GameObject:
   m_ObjectHideFlags: 0
@@ -2065,7 +2065,7 @@ PrefabInstance:
     - target: {fileID: 2512387470528047737, guid: 48cb3fb68c91eb94999fd99957eb0cae,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2512387470528047737, guid: 48cb3fb68c91eb94999fd99957eb0cae,
         type: 3}
@@ -3745,7 +3745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &700977396
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6118,7 +6118,7 @@ PrefabInstance:
     - target: {fileID: 3856852392095849295, guid: 9b37855f8bc93f544b7020a5ac858e9a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4051576766794741457, guid: 9b37855f8bc93f544b7020a5ac858e9a,
         type: 3}
@@ -6128,7 +6128,7 @@ PrefabInstance:
     - target: {fileID: 4051576766794741457, guid: 9b37855f8bc93f544b7020a5ac858e9a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4570460228196864448, guid: 9b37855f8bc93f544b7020a5ac858e9a,
         type: 3}
@@ -6164,6 +6164,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 273.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5219398094533710619, guid: 9b37855f8bc93f544b7020a5ac858e9a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223874460378856887, guid: 9b37855f8bc93f544b7020a5ac858e9a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6426600689159857490, guid: 9b37855f8bc93f544b7020a5ac858e9a,
         type: 3}
@@ -6732,7 +6742,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1321795197
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10335,7 +10345,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 331264285}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
   m_Name: 
@@ -10776,12 +10786,6 @@ CanvasRenderer:
 --- !u!4 &1448779110702540224 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1683621743096219712, guid: fa99e7c9f63a68c419cf1d6faf2a0364,
-    type: 3}
-  m_PrefabInstance: {fileID: 4880124633609731850}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2256523591621164922 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4166757838973168388, guid: fa99e7c9f63a68c419cf1d6faf2a0364,
     type: 3}
   m_PrefabInstance: {fileID: 4880124633609731850}
   m_PrefabAsset: {fileID: 0}
