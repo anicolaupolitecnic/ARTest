@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Toni/Environment.prefab.meta
 guid: 8f394f8cb8377a64397cdf9978240286
 PrefabImporter:
+========
+guid: 075df414028b0754a9e3a879299db53d
+DefaultImporter:
+>>>>>>>> f7bfd150e3456dee6e0fca0cec49630ebf425d45:Assets/Scenes/Marti/CarreraProtip 2.unity.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
