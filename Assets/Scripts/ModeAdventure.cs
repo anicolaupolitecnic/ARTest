@@ -107,30 +107,11 @@ public class ModeAdventure : MonoBehaviour
                     planeManager.enabled = isPlacableEnvironment = false;
                     Transform start = GameObject.Find("StartPoint").transform;
                     myCar =  Instantiate(car, start.position, Quaternion.identity);
+                    myCar.SetActive(true);
                     infoText.text = "";
                     carHUD.SetActive(true);
                 }
             }
-        }
-
-        if (isPlacableEnvironment)
-        {
-            isPlacableEnvironment= false;
-
-            myEnvironment = Instantiate(environment, environment.transform);
-
-            Collider collider = GetComponent<Collider>();
-
-            if (collider != null)
-            {
-                Vector3 size = collider.bounds.size;
-                myEnvironment.transform.position -= size * 0.5f;
-            }
-
-            myEnvironment.transform.rotation = Quaternion.Euler(Vector3.zero);
-            planeManager.enabled = isPlacableEnvironment = false;
-            Transform start = GameObject.Find("StartPoint").transform;
-            myCar = Instantiate(car, start.position, Quaternion.identity);
         }
     }
 }

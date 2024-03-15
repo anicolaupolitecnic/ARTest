@@ -1533,6 +1533,7 @@ MonoBehaviour:
   MenuSelectCar: {fileID: 1715572312}
   MenuSelectCircuit: {fileID: 423768645}
   MenuGameCircuit: {fileID: 1983400553}
+  UIGameCircuit: {fileID: 0}
   planeManager: {fileID: 2009559915}
   circuits: []
 --- !u!114 &288986147
@@ -1576,7 +1577,7 @@ MonoBehaviour:
   car: {fileID: 823019475}
   infoText: {fileID: 317580922}
   planeManager: {fileID: 2009559915}
-  environment: {fileID: 6515790499391369192, guid: 8f394f8cb8377a64397cdf9978240286,
+  environment: {fileID: 6719117913777994, guid: 8f394f8cb8377a64397cdf9978240286,
     type: 3}
 --- !u!1 &290796062
 GameObject:
@@ -3710,7 +3711,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &696346109
 Transform:
   m_ObjectHideFlags: 0
