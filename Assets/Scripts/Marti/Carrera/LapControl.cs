@@ -7,6 +7,8 @@ public class LapControl : MonoBehaviour
 {
     private TextMeshProUGUI voltesUI;
     private TextMeshProUGUI cronometroUI;
+    private TextMeshProUGUI bestTimeScore;
+    private TextMeshProUGUI besTimeText;
     private ContadorCarrera timer;
     private GameObject canvasMapa;
     private GameObject winnerUI;
@@ -31,9 +33,12 @@ public class LapControl : MonoBehaviour
         canvasMapa = GameObject.Find("UI");
         voltesUI = canvasMapa.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();
         cronometroUI = canvasMapa.transform.GetChild(0).GetChild(3).GetComponent<TextMeshProUGUI>();
+        bestTimeScore = canvasMapa.transform.GetChild(0).GetChild(5).GetComponent<TextMeshProUGUI>();
+        besTimeText = canvasMapa.transform.GetChild(0).GetChild(4).GetComponent<TextMeshProUGUI>();
         winnerUI = canvasMapa.transform.GetChild(0).GetChild(2).gameObject;
 
-
+        bestTimeScore.enabled = false;
+        besTimeText.enabled = false;
         voltesUI.enabled = false;
         cronometroUI.enabled = false;
         transformCheckPoint = transform.position;
@@ -51,6 +56,8 @@ public class LapControl : MonoBehaviour
             voltesUI.enabled = true;
             carrera = true;
             cronometroUI.enabled = true;
+            bestTimeScore.enabled = true;
+            besTimeText.enabled = true;
 
             cronometroCheck += Time.deltaTime;
 
@@ -114,14 +121,35 @@ public class LapControl : MonoBehaviour
                     voltesCotxe++;
                     voltesUI.SetText("Laps " + voltesCotxe.ToString() + " / " + Laps.ToString());
                     bestLap.Add(cronometroCheck);
-                    contadorCheck = 0;
+                    lookBestLap(cronometroCheck);
+                    cronometroCheck = 0;
+                    cronometroUI.text = cronometroCheck.ToString("f1");
+                    
                 }
                 else
                 {
                     winnerUI.SetActive(true);
                     voltesUI.enabled = false;
+                    bestLap.Add(cronometroCheck);
+                    lookBestLap(cronometroCheck);
+                    cronometroCheck = 0;
+                    cronometroUI.text = cronometroCheck.ToString("f1");
                     winner = true;
+                    cronometroUI.enabled = false;
                 }
+            }
+        }
+    }
+
+    private void lookBestLap(float lap)
+    {
+        besTimeText.text = lap.ToString("f1");
+        lap = Mathf.Infinity;
+        for (int i = 0; i < bestLap.Count; i++)
+        {
+            if (bestLap[i] > lap)
+            {
+                besTimeText.text = lap.ToString("f1");
             }
         }
     }
