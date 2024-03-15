@@ -1289,8 +1289,8 @@ MonoBehaviour:
   carHUD: {fileID: 1980234688}
   car: {fileID: 1083830522}
   cars:
-  - {fileID: 955059071761063640, guid: b59e3a154f8844d4a9fc0bb804275c74, type: 3}
-  - {fileID: 9121702076139934798, guid: d3cb30b858d0b454b86dd7c2d88c7e5f, type: 3}
+  - {fileID: 4190317568435511805, guid: 825310e64a3d8d74fa00458c6cbaa0d4, type: 3}
+  - {fileID: 3710348988138350905, guid: 2b655e365d89ace488f77be9d7f2cc3c, type: 3}
   - {fileID: 7008660129614920233, guid: d5d000d418a624e498921b6cc225898d, type: 3}
   MenuSelectCar: {fileID: 1715572312}
   MenuSelectCircuit: {fileID: 423768645}
