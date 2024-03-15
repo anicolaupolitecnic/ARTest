@@ -119,26 +119,27 @@ public class ModeCirManager : MonoBehaviour
     public void SelectCircuit1()
     {
         selectedCircuit = circuits[0];
-        Instantiate(selectedCircuit);
-        Transform start = GameObject.Find("StartPoint").transform;
-        Instantiate(selectedCar, start.position, Quaternion.identity);
+        selectedCar.transform.localScale = new Vector3(0.07f, 0.07f, 0.07f);
+        //Instantiate(selectedCircuit);
+        //Transform start = GameObject.Find("StartPoint").transform;
+        //Instantiate(selectedCar, start.position, Quaternion.identity);
     }
 
     public void SelectCircuit2()
     {
         selectedCircuit = circuits[1];
-        //Instantiate(selectedCircuit);
-        //Transform start = GameObject.Find("StartPoint").transform;
-        //Instantiate(selectedCar, start);
-        //Instantiate(selectedCircuit);
+        selectedCar.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+        Instantiate(selectedCircuit);
+        Transform start = GameObject.Find("StartPoint").transform;
+        Instantiate(selectedCar, start.position, Quaternion.identity);
     }
     public void SelectCircuit3()
     {
         selectedCircuit = circuits[2];
-        //Instantiate(selectedCircuit);
-        //Transform start = GameObject.Find("StartPoint").transform;
-        //Instantiate(selectedCar, start);
-        //Instantiate(selectedCircuit);
+        selectedCar.transform.localScale = new Vector3(0.03f, 0.03f, 0.03f);
+        Instantiate(selectedCircuit);
+        Transform start = GameObject.Find("StartPoint").transform;
+        Instantiate(selectedCar, start.position, Quaternion.identity);
     }
 
     private void SetCircuitPosition()

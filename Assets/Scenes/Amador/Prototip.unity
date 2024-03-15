@@ -464,7 +464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &167670744
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1068,11 +1068,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugText: {fileID: 1470278010}
   mainMenu: {fileID: 676279920}
+  optionsMenu: {fileID: 0}
+  modeXperimentMenu: {fileID: 0}
   modeAdventureMenu: {fileID: 620744147}
   modeCircuitMenu: {fileID: 159731719}
   MODEMAINMENU: 0
-  MODEADV: 1
+  MODEXPER: 1
   MODECIR: 2
+  MODEADV: 1
   mode: 0
 --- !u!4 &288986145
 Transform:
@@ -1114,9 +1117,9 @@ MonoBehaviour:
   MenuGameCircuit: {fileID: 1983400553}
   planeManager: {fileID: 2009559915}
   circuits:
-  - {fileID: 4236214456164769596, guid: 164026083af380d41814c41244fbad33, type: 3}
-  - {fileID: 2351905569681139886, guid: 2b776f30c8f541546875dc3a97fa97bb, type: 3}
-  - {fileID: 6084850811604914821, guid: 9a52dfdd11f30a44f920b18f9b7a783f, type: 3}
+  - {fileID: 4236214456164769596, guid: f8a8e348d24dd8248816e38499932660, type: 3}
+  - {fileID: 6577842205938893361, guid: 2ed7a43c7a5d55641ba94a394efb0297, type: 3}
+  - {fileID: 9008855650639746683, guid: 98d5256cfb44a0144869e8401715a39c, type: 3}
 --- !u!114 &288986147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1395,15 +1398,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.0071382523, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a8b601a7e2236a640ac28fe70370fefb, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2027,15 +2030,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 3afa8aa7151250a45aba5e0472104132, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2458,15 +2461,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9482509, b: 0, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: d7e5788fa0ffbc74592cea41120c736f, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2540,7 +2543,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &635173323
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3215,7 +3218,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839718198}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -3700,15 +3703,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0.92193604, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 46efc2a85d6f45f42bca94b5ad1b4a4f, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4501,7 +4504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1266325434
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5374,15 +5377,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.7166245, b: 0, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: ecc78b900de544b49aceddb9a414637a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5520,15 +5523,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.2600515, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 494f0dffcfcf924439136d18b233ca1d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -7131,7 +7134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1956965696
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8088,7 +8091,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2073849991
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8223,6 +8226,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4813862208830673932, guid: 9d0b07409fc84cd49946a180eb73a8b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5827257241048082781, guid: 9d0b07409fc84cd49946a180eb73a8b2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8290,6 +8298,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Circuit1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3641124963537178988, guid: dbd54589ae3373a45941390145bd8024,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4620504670659564481, guid: dbd54589ae3373a45941390145bd8024,
         type: 3}
@@ -8414,6 +8427,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3799200391077527532, guid: 3ef5a80b1d63df54e96dd87bd70a15a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8440,7 +8458,7 @@ PrefabInstance:
     - target: {fileID: 3002959883189518647, guid: fd97fa0ec83a2ca4db46c703c425966a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6088477986575437536, guid: fd97fa0ec83a2ca4db46c703c425966a,
         type: 3}
@@ -8510,6 +8528,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circuit3
       objectReference: {fileID: 0}
+    - target: {fileID: 4049194839791236787, guid: 1e9c6ffba9ebc11469521abfc7d79d79,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4804910227321910709, guid: 1e9c6ffba9ebc11469521abfc7d79d79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8573,10 +8596,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1524674722}
     m_Modifications:
+    - target: {fileID: 3429126191580482003, guid: 66f96c5bd8c240941acf6afef2e47941,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4164218028765576570, guid: 66f96c5bd8c240941acf6afef2e47941,
         type: 3}
       propertyPath: m_Name
       value: Circuit2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164218028765576570, guid: 66f96c5bd8c240941acf6afef2e47941,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4171795809318332560, guid: 66f96c5bd8c240941acf6afef2e47941,
         type: 3}
