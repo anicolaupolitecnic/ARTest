@@ -16,10 +16,11 @@ public class ModeAdventure : MonoBehaviour
 
     //Mode Adventure
     private bool isPlacableEnvironment = false;
-    [SerializeField] private ARPlaneManager planeManager;
+    //[SerializeField] private ARPlaneManager planeManager;
+    [SerializeField] private ARTrackedImageManager arTrackerManager;
     [SerializeField] private GameObject environment;
 
-    private GameObject myCar;
+    //private GameObject myCar;
     private GameObject myEnvironment;
 
     private void Awake()
@@ -38,7 +39,7 @@ public class ModeAdventure : MonoBehaviour
         {
             if (isPlacableEnvironment)
             {
-                SetEnvironmentPosition();
+                //SetEnvironmentPosition();
             }
         }
     }
@@ -47,7 +48,7 @@ public class ModeAdventure : MonoBehaviour
     {
         carHUD.SetActive(false);
         menuModeAdventure.SetActive(true);
-        planeManager.enabled = true;
+        arTrackerManager.enabled = true;
         gameManager.mode = gameManager.MODEADV;
         isPlacableEnvironment = true;
     }
@@ -56,11 +57,11 @@ public class ModeAdventure : MonoBehaviour
     {
         carHUD.SetActive(false);
         menuModeAdventure.SetActive(false);
-        planeManager.enabled = false;
+        arTrackerManager.enabled = false;
         gameManager.EnableMainMenu();
         
-        if (myCar != null)
-            Destroy(myCar);
+        if (car != null)
+            car.SetActive(false);
         if (myEnvironment != null)
             Destroy(myEnvironment);
 
@@ -77,41 +78,45 @@ public class ModeAdventure : MonoBehaviour
 
     private void SetEnvironmentPosition()
     {
+        Vector2 tPosition = new Vector2();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            tPosition = (Input.mousePosition);
+        }
+
+        // Check for touches (for mobile devices)
         if (Input.touchCount > 0)
         {
-            if (Input.GetTouch(0).phase == TouchPhase.Began)
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
             {
-                // Get the position of the touch
-                Vector2 touchPosition = Input.GetTouch(0).position;
-
-                // Convert the touch position to a ray from the camera
-                Ray ray = aRCamera.ScreenPointToRay(touchPosition);
-
-                // Perform the raycast
-                RaycastHit hit;
-
-                //Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red, 100f);
-                if (Physics.Raycast(ray, out hit))
-                {
-                    myEnvironment = Instantiate(environment, hit.collider.gameObject.transform);
-
-                    Collider collider = GetComponent<Collider>();
-
-                    if (collider != null)
-                    {
-                        Vector3 size = collider.bounds.size;
-                        myEnvironment.transform.position -= size * 0.5f;
-                    }
-
-                    myEnvironment.transform.rotation = Quaternion.Euler(Vector3.zero);
-                    planeManager.enabled = isPlacableEnvironment = false;
-                    Transform start = GameObject.Find("StartPoint").transform;
-                    myCar =  Instantiate(car, start.position, Quaternion.identity);
-                    myCar.SetActive(true);
-                    infoText.text = "";
-                    carHUD.SetActive(true);
-                }
+                tPosition  =(touch.position);
             }
+        }
+
+        // Convert the touch position to a ray from the camera
+        Ray ray = aRCamera.ScreenPointToRay(tPosition);
+
+        // Perform the raycast
+        RaycastHit hit;
+
+        //Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red, 100f);
+        if (Physics.Raycast(ray, out hit))
+        {
+            myEnvironment.SetActive(true);
+            myEnvironment.transform.rotation = hit.collider.gameObject.transform.rotation;
+            myEnvironment.transform.position = hit.collider.gameObject.transform.position;
+
+            arTrackerManager.enabled = isPlacableEnvironment = false;
+            //myCar =  Instantiate(car, start.position, Quaternion.identity);
+
+            Transform start = GameObject.Find("StartPoint").transform;
+            car.transform.position = start.position;
+            car.SetActive(true);
+                    
+            infoText.text = "";
+            carHUD.SetActive(true);
         }
     }
 }
